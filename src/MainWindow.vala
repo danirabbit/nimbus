@@ -30,7 +30,6 @@ public class MainWindow : Gtk.Dialog {
         location = location.find_nearest_city (38.5816, -121.4944);
 
         var weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
-        weather_info.set_enabled_providers (GWeather.Provider.ALL);
 
         set_keep_above (true);
 
