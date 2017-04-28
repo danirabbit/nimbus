@@ -16,7 +16,6 @@ executable(
     'src/MainWindow.vala',
     asresources,
     c_args : '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
-    link_args : '-lm',
     dependencies :[
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
