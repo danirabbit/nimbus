@@ -27,6 +27,17 @@ public class Nimbus : Gtk.Application {
     protected override void activate () {
         var app_window = new MainWindow (this);
         app_window.show ();
+
+        var quit_action = new SimpleAction ("quit", null);
+
+        quit_action.activate.connect (() => {
+            if (app_window != null) {
+                app_window.destroy ();
+            }
+        });
+
+        add_action (quit_action);
+        add_accelerator ("<Control>q", "app.quit", null);
     }
 
     public static int main (string[] args) {
