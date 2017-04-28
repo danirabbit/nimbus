@@ -17,9 +17,10 @@ Run `meson build` to configure the build environment and then change to the buil
 
     meson build
     cd build
+    mesonconf -Dprefix=/usr
     ninja
 
 To install, use `ninja install`, then execute with `com.github.danrabbit.nimbus`
 
-    ninja install
+    sudo ninja install
     com.github.danrabbit.nimbus
