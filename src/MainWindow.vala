@@ -26,16 +26,21 @@ public class MainWindow : Gtk.Dialog {
     }
 
     construct {
+        var location = GWeather.Location.get_world ();
+        location = location.find_nearest_city (38.5816, -121.4944);
+
+        var weather_info = new GWeather.Info (location, GWeather.ForecastType.STATE);
+
         set_keep_above (true);
 
-        var weather_icon = new Gtk.Image.from_icon_name ("weather-clear-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var weather_icon = new Gtk.Image.from_icon_name ("%s-symbolic".printf (weather_info.get_icon_name ()), Gtk.IconSize.LARGE_TOOLBAR);
 
-        var weather_label = new Gtk.Label ("Sunny");
+        var weather_label = new Gtk.Label (weather_info.get_conditions ());
         weather_label.halign = Gtk.Align.START;
         weather_label.hexpand = true;
         weather_label.get_style_context ().add_class ("weather");
 
-        var temp_label = new Gtk.Label ("70°");
+        var temp_label = new Gtk.Label ("%s°".printf (weather_info.get_temp ()));
         temp_label.halign = Gtk.Align.START;
         temp_label.get_style_context ().add_class ("temperature");
 
@@ -46,7 +51,7 @@ public class MainWindow : Gtk.Dialog {
         weather_grid.attach (weather_label, 1, 0, 1, 1);
         weather_grid.attach (temp_label, 0, 1, 2, 1);
 
-        var location_label = new Gtk.Label ("Sacramento");
+        var location_label = new Gtk.Label (location.get_city_name ());
         location_label.halign = Gtk.Align.END;
         location_label.valign = Gtk.Align.END;
         location_label.margin_bottom = 12;
