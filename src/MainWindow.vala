@@ -29,18 +29,19 @@ public class MainWindow : Gtk.Dialog {
         var location = GWeather.Location.get_world ();
         location = location.find_nearest_city (38.5816, -121.4944);
 
-        var weather_info = new GWeather.Info (location, GWeather.ForecastType.STATE);
+        var weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
+        weather_info.set_enabled_providers (GWeather.Provider.ALL);
 
         set_keep_above (true);
 
         var weather_icon = new Gtk.Image.from_icon_name ("%s-symbolic".printf (weather_info.get_icon_name ()), Gtk.IconSize.LARGE_TOOLBAR);
 
-        var weather_label = new Gtk.Label (weather_info.get_conditions ());
+        var weather_label = new Gtk.Label (weather_info.get_sky ());
         weather_label.halign = Gtk.Align.START;
         weather_label.hexpand = true;
         weather_label.get_style_context ().add_class ("weather");
 
-        var temp_label = new Gtk.Label ("%s°".printf (weather_info.get_temp ()));
+        var temp_label = new Gtk.Label (weather_info.get_temp ());
         temp_label.halign = Gtk.Align.START;
         temp_label.get_style_context ().add_class ("temperature");
 
@@ -70,5 +71,14 @@ public class MainWindow : Gtk.Dialog {
 
         var action_box = get_action_area () as Gtk.Box;
         action_box.visible = false;
+
+        weather_info.updated.connect (() => {
+            weather_icon.icon_name = "%s-symbolic".printf (weather_info.get_icon_name ());
+            weather_label.label = weather_info.get_sky ();
+
+            double temp;
+            weather_info.get_value_temp (GWeather.TemperatureUnit.CENTIGRADE, out temp);
+            temp_label.label = "%i°".printf ((int) temp);
+        });
     }
 }
