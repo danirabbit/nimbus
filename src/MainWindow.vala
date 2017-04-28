@@ -34,7 +34,7 @@ public class MainWindow : Gtk.Dialog {
     }
 
     construct {
-        //set_keep_below (true);
+        set_keep_below (true);
         stick ();
 
         var location = GWeather.Location.get_world ();
