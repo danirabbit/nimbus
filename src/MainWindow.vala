@@ -25,10 +25,10 @@ public class MainWindow : Gtk.Dialog {
 
         .titlebar,
         .background {
-            background-color: #42baea;
+            background-color: @colorPrimary;
             color: #fff;
-            icon-shadow: 0 1px 1px alpha (#2b63a0, 0.5);
-            text-shadow: 0 1px 1px alpha (#2b63a0, 0.5);
+            icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
+            text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
         }
 
         .weather {
