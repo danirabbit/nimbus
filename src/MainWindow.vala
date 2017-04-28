@@ -26,12 +26,13 @@ public class MainWindow : Gtk.Dialog {
     }
 
     construct {
+        set_keep_below (true);
+        stick ();
+
         var location = GWeather.Location.get_world ();
         location = location.find_nearest_city (38.5816, -121.4944);
 
         var weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
-
-        set_keep_above (true);
 
         var weather_icon = new Gtk.Image.from_icon_name ("%s-symbolic".printf (weather_info.get_icon_name ()), Gtk.IconSize.LARGE_TOOLBAR);
 
