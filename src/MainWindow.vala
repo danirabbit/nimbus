@@ -77,7 +77,7 @@ public class MainWindow : Gtk.Dialog {
             weather_label.label = weather_info.get_sky ();
 
             double temp;
-            weather_info.get_value_temp (GWeather.TemperatureUnit.CENTIGRADE, out temp);
+            weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = "%i°".printf ((int) temp);
         });
     }
