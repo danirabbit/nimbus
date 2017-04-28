@@ -25,16 +25,22 @@ public class Nimbus : Gtk.Application {
     }
 
     protected override void activate () {
-        var app_window = new MainWindow (this);
+        var settings = new Settings ("com.github.danrabbit.nimbus");
+
+        var window_x = settings.get_int ("window-x");
+        var window_y = settings.get_int ("window-y");
+
+        MainWindow app_window;
+
+        if (window_x != -1 ||  window_y != -1) {
+            app_window = new MainWindow.with_position (this, window_x, window_y);
+        } else {
+            app_window = new MainWindow (this);
+        }
+
         app_window.show ();
 
         var quit_action = new SimpleAction ("quit", null);
-
-        quit_action.activate.connect (() => {
-            if (app_window != null) {
-                app_window.destroy ();
-            }
-        });
 
         add_action (quit_action);
         add_accelerator ("<Control>q", "app.quit", null);
@@ -42,6 +48,19 @@ public class Nimbus : Gtk.Application {
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("com/github/danrabbit/nimbus/Application.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        quit_action.activate.connect (() => {
+            if (app_window != null) {
+                app_window.destroy ();
+            }
+        });
+
+        app_window.state_changed.connect (() => {
+            int root_x, root_y;
+            app_window.get_position (out root_x, out root_y);
+            settings.set_int ("window-x", root_x);
+            settings.set_int ("window-y", root_y);
+        });
     }
 
     public static int main (string[] args) {

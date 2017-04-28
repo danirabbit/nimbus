@@ -34,6 +34,15 @@ public class MainWindow : Gtk.Dialog {
                 title: "Nimbus");
     }
 
+    public MainWindow.with_position (Gtk.Application application, int x, int y) {
+        Object (application: application,
+                width_request: 500,
+                deletable: false,
+                resizable: false,
+                title: "Nimbus");
+        move (x, y);
+    }
+
     construct {
         set_keep_below (true);
         stick ();
