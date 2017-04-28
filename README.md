@@ -1,5 +1,9 @@
 # Nimbus
 
+Nimbus is a minimal weather applet.
+
+![Nimbus Screenshot](https://raw.github.com/danrabbit/nimbus/master/data/screenshot.png)
+
 ## Building, Testing, and Installation
 
 
