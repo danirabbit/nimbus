@@ -2,7 +2,7 @@
 Name=Nimbus
 Comment=See outside without going there
 Exec=com.github.danrabbit.nimbus
-Icon=application-default-icon
+Icon=com.github.danrabbit.nimbus
 Keywords=weather;
 Terminal=false
 Type=Application

@@ -28,18 +28,20 @@ public class MainWindow : Gtk.Dialog {
 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
-                width_request: 500,
                 deletable: false,
+                icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
-                title: "Nimbus");
+                title: "Nimbus",
+                width_request: 500);
     }
 
     public MainWindow.with_position (Gtk.Application application, int x, int y) {
         Object (application: application,
-                width_request: 500,
                 deletable: false,
+                icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
-                title: "Nimbus");
+                title: "Nimbus",
+                width_request: 500);
         move (x, y);
     }
 

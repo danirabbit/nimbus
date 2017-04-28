@@ -35,4 +35,9 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'applications')
 )
 
+install_data(
+    'data/icons/com.github.danrabbit.nimbus.svg',
+    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', '48x48', 'apps')
+)
+
 meson.add_install_script('meson/post_install.py')
