@@ -30,7 +30,8 @@ public class MainWindow : Gtk.Dialog {
         Object (application: application,
                 width_request: 500,
                 deletable: false,
-                resizable: false);
+                resizable: false,
+                title: "Nimbus");
     }
 
     construct {
@@ -38,7 +39,8 @@ public class MainWindow : Gtk.Dialog {
         stick ();
 
         var location = GWeather.Location.get_world ();
-        location = location.find_nearest_city (38.5816, -121.4944);
+        location = location.find_nearest_city (38.5816, -121.4944); // Sacramento
+        //location = location.find_nearest_city (48.8566, 2.3522); // Paris
 
         var weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
 
