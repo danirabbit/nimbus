@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nimbus
+Comment=See outside without going there
+Exec=com.github.danrabbit.nimbus
+Icon=application-default-icon
+Keywords=weather;
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;

@@ -30,4 +30,9 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
+install_data(
+    'data/com.github.danrabbit.nimbus.desktop',
+    install_dir: join_paths(get_option('datadir'), 'applications')
+)
+
 meson.add_install_script('meson/post_install.py')
