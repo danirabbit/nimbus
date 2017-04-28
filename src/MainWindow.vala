@@ -18,6 +18,14 @@
 */
 
 public class MainWindow : Gtk.Dialog {
+    private const string COLOR_PRIMARY = """
+        @define-color colorPrimary %s;
+        .background,
+        .titlebar {
+            transition: all 600ms ease-in-out;
+        }
+    """;
+
     public MainWindow (Gtk.Application application) {
         Object (application: application,
                 width_request: 500,
@@ -26,7 +34,7 @@ public class MainWindow : Gtk.Dialog {
     }
 
     construct {
-        set_keep_below (true);
+        //set_keep_below (true);
         stick ();
 
         var location = GWeather.Location.get_world ();
@@ -79,6 +87,36 @@ public class MainWindow : Gtk.Dialog {
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = "%i°".printf ((int) temp);
+
+            string color_primary;
+
+            switch (weather_icon.icon_name) {
+                case "weather-clear-night-symbolic":
+                case "weather-few-clouds-night-symbolic":
+                    color_primary = "#183048";
+                    break;
+                case "weather-few-clouds-symbolic":
+                case "weather-overcast-symbolic":
+                case "weather-showers-scattered-symbolic":
+                    color_primary = "#68758e";
+                    break;
+                case "weather-snow-symbolic":
+                    color_primary = "#6fc3ff";
+                    break;
+                default:
+                    color_primary = "#42baea";
+                    break;
+            }
+
+            var provider = new Gtk.CssProvider ();
+            try {
+                var colored_css = COLOR_PRIMARY.printf (color_primary);
+                provider.load_from_data (colored_css, colored_css.length);
+
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
         });
     }
 }
