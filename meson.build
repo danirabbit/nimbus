@@ -2,10 +2,19 @@ project('com.github.danrabbit.nimbus', ['vala', 'c'],
     version : '0.1.0'
 )
 
+gnome = import('gnome')
+
+asresources = gnome.compile_resources(
+    'as-resources', 'data/css.gresource.xml',
+    source_dir : 'data',
+    c_name : 'as'
+)
+
 executable(
     'com.github.danrabbit.nimbus',
     'src/Application.vala',
     'src/MainWindow.vala',
+    asresources,
     c_args : '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
     dependencies :[
         dependency('glib-2.0'),

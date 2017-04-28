@@ -15,41 +15,9 @@
 * License along with this program; if not, write to the
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
-*
 */
 
 public class MainWindow : Gtk.Dialog {
-    private const string CSS = """
-        @define-color colorPrimary #42baea;
-        @define-color bg_highlight_color shade (@colorPrimary, 1.4);
-
-        .titlebar,
-        .background {
-            background-color: @colorPrimary;
-            color: #fff;
-            icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
-            text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
-        }
-
-        GtkDialog .window-frame {
-            border-radius: 4px;
-            box-shadow:
-                0 0 0 1px alpha (shade (@colorPrimary, 0.6), 0.55),
-                0 8px 10px 1px alpha (#000, 0.14),
-                0 3px 14px 2px alpha (#000, 0.12),
-                0 5px 5px -3px alpha (#000, 0.4),
-                0 14px 28px transparent;
-        }
-
-        .weather {
-            font-size: 14px;
-        }
-
-        .temperature {
-            font-size: 36px;
-        }
-    """;
- 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
                 width_request: 500,
@@ -62,7 +30,7 @@ public class MainWindow : Gtk.Dialog {
 
         var provider = new Gtk.CssProvider ();
         try {
-            provider.load_from_data (CSS, CSS.length);
+            provider.load_from_resource ("com/github/danrabbit/nimbus/MainWindow.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (Error e) {
             critical (e.message);
