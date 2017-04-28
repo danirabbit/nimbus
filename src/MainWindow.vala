@@ -28,14 +28,6 @@ public class MainWindow : Gtk.Dialog {
     construct {
         set_keep_above (true);
 
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_resource ("com/github/danrabbit/nimbus/MainWindow.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
-
         var weather_icon = new Gtk.Image.from_icon_name ("weather-clear-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var weather_label = new Gtk.Label ("Sunny");
