@@ -83,6 +83,10 @@ public class MainWindow : Gtk.Dialog {
         var action_box = get_action_area () as Gtk.Box;
         action_box.visible = false;
 
+        focus.connect (() => {
+            weather_info.update ();
+        });
+
         weather_info.updated.connect (() => {
             weather_icon.icon_name = "%s-symbolic".printf (weather_info.get_icon_name ());
             weather_label.label = weather_info.get_sky ();
