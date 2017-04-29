@@ -25,17 +25,15 @@ public class Nimbus : Gtk.Application {
     }
 
     protected override void activate () {
+        var app_window = new MainWindow (this);
+
         var settings = new Settings ("com.github.danrabbit.nimbus");
 
         var window_x = settings.get_int ("window-x");
         var window_y = settings.get_int ("window-y");
 
-        MainWindow app_window;
-
         if (window_x != -1 ||  window_y != -1) {
-            app_window = new MainWindow.with_position (this, window_x, window_y);
-        } else {
-            app_window = new MainWindow (this);
+            app_window.move (window_x, window_y);
         }
 
         app_window.show ();
