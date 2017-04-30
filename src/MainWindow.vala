@@ -26,6 +26,7 @@ public class MainWindow : Gtk.Dialog {
         }
     """;
 
+    private Gtk.Stack stack;
     private GWeather.Location location;
     private GWeather.Info weather_info;
 
@@ -37,6 +38,7 @@ public class MainWindow : Gtk.Dialog {
                 skip_taskbar_hint: true,
                 title: "Nimbus",
                 type_hint: Gdk.WindowTypeHint.UTILITY,
+                height_request: 272,
                 width_request: 500);
     }
 
@@ -78,9 +80,19 @@ public class MainWindow : Gtk.Dialog {
         grid.attach (weather_grid, 0, 0, 1, 1);
         grid.attach (location_label, 1, 0, 1, 1);
 
+        var spinner = new Gtk.Spinner ();
+        spinner.active = true;
+        spinner.halign = Gtk.Align.CENTER;
+        spinner.vexpand = true;
+
+        stack = new Gtk.Stack ();
+        stack.vhomogeneous = true;
+        stack.add_named (spinner, "alert");
+        stack.add_named (grid, "weather");
+
         var content_box = get_content_area () as Gtk.Box;
         content_box.border_width = 0;
-        content_box.add (grid);
+        content_box.add (stack);
         content_box.show_all ();
 
         var action_box = get_action_area () as Gtk.Box;
@@ -91,6 +103,10 @@ public class MainWindow : Gtk.Dialog {
         });
 
         weather_info.updated.connect (() => {
+            if (location == null) {
+                return;
+            }
+
             location_label.label = location.get_city_name ();
 
             weather_icon.icon_name = "%s-symbolic".printf (weather_info.get_icon_name ());
@@ -151,8 +167,10 @@ public class MainWindow : Gtk.Dialog {
 
     public void on_location_updated (double latitude, double longitude) {
         location = location.find_nearest_city (latitude, longitude);
-
-        weather_info.location = location;
-        weather_info.update ();
+        if (location != null) {
+            weather_info.location = location;
+            weather_info.update ();
+            stack.visible_child_name = "weather";
+        }
     }
 }
