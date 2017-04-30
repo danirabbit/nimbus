@@ -12,6 +12,11 @@
     <provides>
         <binary>com.github.danrabbit.nimbus</binary>
     </provides>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/danrabbit/nimbus/master/data/screenshot.png</image>
+        </screenshot>
+    </screenshots>
     <developer_name>Daniel Foré</developer_name>
     <url type="homepage">http://danielfore.com</url>
     <url type="bugtracker">https://github.com/danrabbit/nimbus/issues</url>
