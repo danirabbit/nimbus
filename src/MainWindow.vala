@@ -149,23 +149,22 @@ public class MainWindow : Gtk.Dialog {
     }
 
     public async void get_location () {
-        GClue.Simple simple;
-
         try {
-            simple = yield new GClue.Simple ("com.github.danrabbit.nimbus", GClue.AccuracyLevel.CITY, null);
+            var simple = yield new GClue.Simple ("com.github.danrabbit.nimbus", GClue.AccuracyLevel.CITY, null);
+
+            simple.notify["location"].connect (() => {
+                on_location_updated (simple.location.latitude, simple.location.longitude);
+            });
+
+            on_location_updated (simple.location.latitude, simple.location.longitude);
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
             return;
         }
-
-        simple.notify["location"].connect (() => {
-            on_location_updated (simple.location.latitude, simple.location.longitude);
-        });
-
-        on_location_updated (simple.location.latitude, simple.location.longitude);
     }
 
     public void on_location_updated (double latitude, double longitude) {
+        location = GWeather.Location.get_world ();
         location = location.find_nearest_city (latitude, longitude);
         if (location != null) {
             weather_info.location = location;
