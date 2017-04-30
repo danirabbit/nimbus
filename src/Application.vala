@@ -25,6 +25,11 @@ public class Nimbus : Gtk.Application {
     }
 
     protected override void activate () {
+        if (get_windows ().length () > 0) {
+            get_windows ().data.present ();
+            return;
+        }
+
         var app_window = new MainWindow (this);
 
         var settings = new Settings ("com.github.danrabbit.nimbus");
