@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 elementary, LLC <contact@elementary.io> -->
+<component type="desktop-application">
+    <id>com.github.danrabbit.nimbus.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Nimbus</name>
+    <summary>See outside without going there</summary>
+    <description>
+        <p>See the current temperature and weather conditions for your location with this minimal color-changing applet.</p>
+    </description>
+    <provides>
+        <binary>com.github.danrabbit.nimbus</binary>
+    </provides>
+    <developer_name>Daniel Foré</developer_name>
+    <url type="homepage">http://danielfore.com</url>
+    <url type="bugtracker">https://github.com/danrabbit/nimbus/issues</url>
+    <custom>
+        <value key="x-appcenter-color-primary">#42baea</value>
+        <value key="x-appcenter-color-primary-text">#044b6c</value>
+    </custom>
+</component>

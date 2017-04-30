@@ -36,6 +36,11 @@ install_data(
 )
 
 install_data(
+    'data/com.github.danrabbit.nimbus.appdata.xml',
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
+)
+
+install_data(
     'data/icons/com.github.danrabbit.nimbus.svg',
     install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', '48x48', 'apps')
 )

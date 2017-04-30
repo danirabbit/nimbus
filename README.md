@@ -1,6 +1,6 @@
 # Nimbus
 
-Nimbus is a minimal weather applet.
+See the current temperature and weather conditions for your location with this minimal color-changing applet.
 
 ![Nimbus Screenshot](https://raw.github.com/danrabbit/nimbus/master/data/screenshot.png)
 
