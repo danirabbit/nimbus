@@ -36,7 +36,7 @@ public class MainWindow : Gtk.Dialog {
                 icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
                 skip_taskbar_hint: true,
-                title: "Nimbus",
+                title: _("Nimbus"),
                 type_hint: Gdk.WindowTypeHint.UTILITY,
                 height_request: 272,
                 width_request: 500);
@@ -85,7 +85,7 @@ public class MainWindow : Gtk.Dialog {
         spinner.halign = Gtk.Align.CENTER;
         spinner.vexpand = true;
 
-        var alert_label = new Gtk.Label ("Unable to Get Location");
+        var alert_label = new Gtk.Label (_("Unable to Get Location"));
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -118,7 +118,7 @@ public class MainWindow : Gtk.Dialog {
 
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
-            temp_label.label = "%i°".printf ((int) temp);
+            temp_label.label = _("%i°").printf ((int) temp);
 
             string color_primary;
 

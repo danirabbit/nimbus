@@ -3,6 +3,7 @@ project('com.github.danrabbit.nimbus', ['vala', 'c'],
 )
 
 gnome = import('gnome')
+i18n = import('i18n')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/css.gresource.xml',
@@ -12,12 +13,22 @@ asresources = gnome.compile_resources(
 
 add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
 
+conf = configuration_data()
+conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+configure_file(output: 'config.h', configuration: conf)
+config_h_dir = include_directories('.')
+
+c_args = [
+  '-include', 'config.h',
+  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
+]
+
 executable(
     'com.github.danrabbit.nimbus',
     'src/Application.vala',
     'src/MainWindow.vala',
     asresources,
-    c_args: '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
+    c_args: c_args,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
@@ -29,17 +40,17 @@ executable(
 )
 
 install_data(
-    'data/com.github.danrabbit.nimbus.gschema.xml',
+    'data/' + meson.project_name() + '.gschema.xml',
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
 install_data(
-    'data/com.github.danrabbit.nimbus.desktop',
+    'data/' + meson.project_name() + '.desktop',
     install_dir: join_paths(get_option('datadir'), 'applications')
 )
 
 install_data(
-    'data/com.github.danrabbit.nimbus.appdata.xml',
+    'data/' + meson.project_name() + '.appdata.xml',
     install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
@@ -47,9 +58,11 @@ icon_sizes = ['32', '48', '64', '128']
 
 foreach i : icon_sizes
     install_data(
-        'data/icons/' + i + '/com.github.danrabbit.nimbus.svg',
+        'data/icons/' + i + '/' + meson.project_name() + '.svg',
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps')
     )
 endforeach
 
 meson.add_install_script('meson/post_install.py')
+
+subdir('po')
