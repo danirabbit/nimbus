@@ -83,8 +83,9 @@ public class MainWindow : Gtk.Dialog {
         var action_box = get_action_area () as Gtk.Box;
         action_box.visible = false;
 
-        focus.connect (() => {
+        focus_in_event.connect (() => {
             weather_info.update ();
+            warning ("focused!");
         });
 
         weather_info.updated.connect (() => {
