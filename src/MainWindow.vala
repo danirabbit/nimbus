@@ -85,7 +85,6 @@ public class MainWindow : Gtk.Dialog {
 
         focus_in_event.connect (() => {
             weather_info.update ();
-            warning ("focused!");
         });
 
         weather_info.updated.connect (() => {
