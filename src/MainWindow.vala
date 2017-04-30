@@ -88,6 +88,7 @@ public class MainWindow : Gtk.Dialog {
         var alert_label = new Gtk.Label ("Unable to Get Location");
 
         stack = new Gtk.Stack ();
+        stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         stack.vhomogeneous = true;
         stack.add (spinner);
         stack.add_named (grid, "weather");
