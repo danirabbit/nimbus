@@ -31,7 +31,9 @@ public class MainWindow : Gtk.Dialog {
                 deletable: false,
                 icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
+                skip_taskbar_hint: true,
                 title: "Nimbus",
+                type_hint: Gdk.WindowTypeHint.UTILITY,
                 width_request: 500);
     }
 
