@@ -10,6 +10,9 @@ asresources = gnome.compile_resources(
     c_name: 'as'
 )
 
+add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+
+
 executable(
     'com.github.danrabbit.nimbus',
     'src/Application.vala',
@@ -20,7 +23,8 @@ executable(
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
-        dependency('gweather-3.0')
+        dependency('gweather-3.0'),
+        dependency('libgeoclue-2.0')
     ],
     install : true
 )

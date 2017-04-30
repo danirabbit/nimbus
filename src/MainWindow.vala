@@ -26,6 +26,9 @@ public class MainWindow : Gtk.Dialog {
         }
     """;
 
+    private GWeather.Location location;
+    private GWeather.Info weather_info;
+
     public MainWindow (Gtk.Application application) {
         Object (application: application,
                 deletable: false,
@@ -41,11 +44,9 @@ public class MainWindow : Gtk.Dialog {
         set_keep_below (true);
         stick ();
 
-        var location = GWeather.Location.get_world ();
-        location = location.find_nearest_city (38.5816, -121.4944); // Sacramento
-        //location = location.find_nearest_city (48.8566, 2.3522); // Paris
+        get_location.begin ();
 
-        var weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
+        weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
 
         var weather_icon = new Gtk.Image.from_icon_name ("%s-symbolic".printf (weather_info.get_icon_name ()), Gtk.IconSize.LARGE_TOOLBAR);
 
@@ -65,7 +66,7 @@ public class MainWindow : Gtk.Dialog {
         weather_grid.attach (weather_label, 1, 0, 1, 1);
         weather_grid.attach (temp_label, 0, 1, 2, 1);
 
-        var location_label = new Gtk.Label (location.get_city_name ());
+        var location_label = new Gtk.Label ("");
         location_label.halign = Gtk.Align.END;
         location_label.valign = Gtk.Align.END;
         location_label.margin_bottom = 12;
@@ -90,6 +91,8 @@ public class MainWindow : Gtk.Dialog {
         });
 
         weather_info.updated.connect (() => {
+            location_label.label = location.get_city_name ();
+
             weather_icon.icon_name = "%s-symbolic".printf (weather_info.get_icon_name ());
             weather_label.label = weather_info.get_sky ();
 
@@ -127,5 +130,29 @@ public class MainWindow : Gtk.Dialog {
                 critical (e.message);
             }
         });
+    }
+
+    public async void get_location () {
+        GClue.Simple simple;
+
+        try {
+            simple = yield new GClue.Simple ("com.github.danrabbit.nimbus", GClue.AccuracyLevel.CITY, null);
+        } catch (Error e) {
+            warning ("Failed to connect to GeoClue2 service: %s", e.message);
+            return;
+        }
+
+        simple.notify["location"].connect (() => {
+            on_location_updated (simple.location.latitude, simple.location.longitude);
+        });
+
+        on_location_updated (simple.location.latitude, simple.location.longitude);
+    }
+
+    public void on_location_updated (double latitude, double longitude) {
+        location = location.find_nearest_city (latitude, longitude);
+
+        weather_info.location = location;
+        weather_info.update ();
     }
 }
