@@ -8,6 +8,7 @@ See the current temperature and weather conditions for your location with this m
 
 
 You'll need the following dependencies:
+* libgeoclue-2-dev
 * libgtk-3-dev
 * libgweather-3-dev 
 * meson
