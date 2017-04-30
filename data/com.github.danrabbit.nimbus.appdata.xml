@@ -21,7 +21,7 @@
     <url type="homepage">http://danielfore.com</url>
     <url type="bugtracker">https://github.com/danrabbit/nimbus/issues</url>
     <custom>
-        <value key="x-appcenter-color-primary">#42baea</value>
+        <value key="x-appcenter-color-primary">#e9f4fc</value>
         <value key="x-appcenter-color-primary-text">#044b6c</value>
     </custom>
 </component>
