@@ -87,7 +87,7 @@ public class MainWindow : Gtk.Dialog {
 
         stack = new Gtk.Stack ();
         stack.vhomogeneous = true;
-        stack.add_named (spinner, "alert");
+        stack.add (spinner);
         stack.add_named (grid, "weather");
 
         var content_box = get_content_area () as Gtk.Box;
