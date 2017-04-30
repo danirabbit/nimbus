@@ -85,10 +85,13 @@ public class MainWindow : Gtk.Dialog {
         spinner.halign = Gtk.Align.CENTER;
         spinner.vexpand = true;
 
+        var alert_label = new Gtk.Label ("Unable to Get Location");
+
         stack = new Gtk.Stack ();
         stack.vhomogeneous = true;
         stack.add (spinner);
         stack.add_named (grid, "weather");
+        stack.add_named (alert_label, "alert");
 
         var content_box = get_content_area () as Gtk.Box;
         content_box.border_width = 0;
@@ -159,6 +162,7 @@ public class MainWindow : Gtk.Dialog {
             on_location_updated (simple.location.latitude, simple.location.longitude);
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
+            stack.visible_child_name = "alert";
             return;
         }
     }
