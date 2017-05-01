@@ -129,6 +129,7 @@ public class MainWindow : Gtk.Dialog {
                     break;
                 case "weather-few-clouds-symbolic":
                 case "weather-overcast-symbolic":
+                case "weather-showers-symbolic":
                 case "weather-showers-scattered-symbolic":
                     color_primary = "#68758e";
                     break;
