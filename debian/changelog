@@ -1,8 +1,14 @@
+com.github.danrabbit.nimbus (0.1.2) xenial; urgency=medium
+
+  * Fix runtime depends
+
+ -- Daniel Fore <daniel@elementary.io>  Tue, 02 May 2017 15:52:00 -0700
+
 com.github.danrabbit.nimbus (0.1.1) xenial; urgency=medium
 
   * Fix Debian packaging 
 
- -- Daniel Fore <daniel@Yoga>  Tue, 02 May 2017 09:49:44 -0700
+ -- Daniel Fore <daniel@elementary.io>  Tue, 02 May 2017 09:49:44 -0700
 
 com.github.danrabbit.nimbus (0.1.0) xenial; urgency=low
 
