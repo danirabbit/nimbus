@@ -8,11 +8,10 @@ Build-Depends: debhelper (>= 9),
                libgweather-3-dev,
                meson,
                valac
-Depends: geoclue-2.0
 Standards-Version: 3.9.3
 
 Package: com.github.danrabbit.nimbus
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, geoclue-2.0
 Description: See outside without going there
  See the current temperature and weather conditions for your location with this minimal color-changing applet.
