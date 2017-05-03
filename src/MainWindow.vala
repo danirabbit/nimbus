@@ -102,6 +102,14 @@ public class MainWindow : Gtk.Dialog {
         var action_box = get_action_area () as Gtk.Box;
         action_box.visible = false;
 
+        button_press_event.connect ((e) => {
+            if (e.button == Gdk.BUTTON_PRIMARY) {
+                begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
+                return true;
+            }
+            return false;
+        });
+
         focus_in_event.connect (() => {
             weather_info.update ();
         });
