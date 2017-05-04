@@ -7,12 +7,15 @@ See the current temperature and weather conditions for your location with this m
 ## Building, Testing, and Installation
 
 
-You'll need the following dependencies:
+You'll need the following dependencies to build:
 * libgeoclue-2-dev
 * libgtk-3-dev
 * libgweather-3-dev
 * meson
 * valac
+
+You'll need the following dependencies to run:
+* geoclue-2.0
 
 Run `meson build` to configure the build environment and then change to the build directory and run `ninja` to build
 
