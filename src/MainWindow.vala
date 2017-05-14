@@ -36,6 +36,7 @@ public class MainWindow : Gtk.Dialog {
                 icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
                 skip_taskbar_hint: true,
+                skip_pager_hint: true,
                 title: _("Nimbus"),
                 type_hint: Gdk.WindowTypeHint.UTILITY,
                 height_request: 272,
@@ -50,7 +51,7 @@ public class MainWindow : Gtk.Dialog {
 
         weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
 
-        var weather_icon = new Gtk.Image.from_icon_name ("%s-symbolic".printf (weather_info.get_icon_name ()), Gtk.IconSize.LARGE_TOOLBAR);
+        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.LARGE_TOOLBAR);
 
         var weather_label = new Gtk.Label (weather_info.get_sky ());
         weather_label.halign = Gtk.Align.START;
@@ -119,10 +120,10 @@ public class MainWindow : Gtk.Dialog {
                 return;
             }
 
-            location_label.label = location.get_city_name ();
+            location_label.label = dgettext("libgweather-locations", location.get_city_name ());
 
-            weather_icon.icon_name = "%s-symbolic".printf (weather_info.get_icon_name ());
-            weather_label.label = weather_info.get_sky ();
+            weather_icon.icon_name = weather_info.get_symbolic_icon_name ();
+            weather_label.label = dgettext("libgweather", weather_info.get_sky ());
 
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
