@@ -1,3 +1,10 @@
+com.github.danrabbit.nimbus (0.1.6) xenial; urgency=medium
+
+  * Move the window when clicking and dragging anywhere
+  * Code cleanup
+
+ -- Daniel Fore <daniel@elementary.io>  Sun, 14 May 2017 09:23:32 -0700
+
 com.github.danrabbit.nimbus (0.1.5) xenial; urgency=medium
 
   * Add a valid category 
