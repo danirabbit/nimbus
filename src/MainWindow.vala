@@ -32,13 +32,9 @@ public class MainWindow : Gtk.Dialog {
 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
-                deletable: false,
                 icon_name: "com.github.danrabbit.nimbus",
                 resizable: false,
-                skip_taskbar_hint: true,
-                skip_pager_hint: true,
                 title: _("Nimbus"),
-                type_hint: Gdk.WindowTypeHint.UTILITY,
                 height_request: 272,
                 width_request: 500);
     }
@@ -51,35 +47,32 @@ public class MainWindow : Gtk.Dialog {
 
         weather_info = new GWeather.Info (location, GWeather.ForecastType.LIST);
 
-        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.LARGE_TOOLBAR);
+        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.DIALOG);
 
         var weather_label = new Gtk.Label (weather_info.get_sky ());
-        weather_label.halign = Gtk.Align.START;
+        weather_label.halign = Gtk.Align.END;
         weather_label.hexpand = true;
+        weather_label.margin_top = 6;
         weather_label.get_style_context ().add_class ("weather");
 
         var temp_label = new Gtk.Label (weather_info.get_temp ());
         temp_label.halign = Gtk.Align.START;
+        temp_label.margin_bottom = 3;
         temp_label.get_style_context ().add_class ("temperature");
-
-        var weather_grid = new Gtk.Grid ();
-        weather_grid.column_spacing = 6;
-        weather_grid.halign = Gtk.Align.START;
-        weather_grid.attach (weather_icon, 0, 0, 1, 1);
-        weather_grid.attach (weather_label, 1, 0, 1, 1);
-        weather_grid.attach (temp_label, 0, 1, 2, 1);
 
         var location_label = new Gtk.Label ("");
         location_label.halign = Gtk.Align.END;
-        location_label.valign = Gtk.Align.END;
         location_label.margin_bottom = 12;
 
         var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
         grid.margin_bottom = 6;
         grid.margin_end = 18;
         grid.margin_start = 18;
-        grid.attach (weather_grid, 0, 0, 1, 1);
-        grid.attach (location_label, 1, 0, 1, 1);
+        grid.attach (weather_icon, 0, 0, 1, 2);
+        grid.attach (temp_label, 1, 0, 1, 2);
+        grid.attach (weather_label, 2, 0, 1, 1);
+        grid.attach (location_label, 2, 1, 1, 1);
 
         var spinner = new Gtk.Spinner ();
         spinner.active = true;
