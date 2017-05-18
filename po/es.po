@@ -19,13 +19,13 @@ msgstr ""
 
 #: src/MainWindow.vala:39
 msgid "Nimbus"
-msgstr ""
+msgstr "Nimbus"
 
 #: src/MainWindow.vala:88
 msgid "Unable to Get Location"
-msgstr ""
+msgstr "No fue posible encontrar tu ubicación"
 
 #: src/MainWindow.vala:121
 #, c-format
 msgid "%i°"
-msgstr ""
+msgstr "%iº"
