@@ -28,4 +28,4 @@ msgstr "No fue posible encontrar tu ubicación"
 #: src/MainWindow.vala:121
 #, c-format
 msgid "%i°"
-msgstr "%iº"
+msgstr "%i°"
