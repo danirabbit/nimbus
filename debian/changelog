@@ -1,3 +1,12 @@
+com.github.danrabbit.nimbus (0.2.0) xenial; urgency=medium
+
+  * New layout
+  * Close button
+  * updated appdata
+  * Now available in Spanish
+
+ -- Daniel Fore <daniel@elementary.io>  Fri, 19 May 2017 07:47:11 -0700
+
 com.github.danrabbit.nimbus (0.1.7) xenial; urgency=medium
 
   * Update Stripe Key
