@@ -85,7 +85,9 @@ public class MainWindow : Gtk.Dialog {
                 temp_unit.label = "°F";
                 temp_label.label = _("%d").printf ((int) temp);         
             }
-            if(temp > 10 || temp < 10){
+            if(temp < -10){
+                temp_unit.margin_left = 60;
+            }else if(temp > 10 || temp < 0){
                 temp_unit.margin_left = 45;
             }else{
                 temp_unit.margin_left = 15;
@@ -156,7 +158,9 @@ public class MainWindow : Gtk.Dialog {
                 temp = ((temp-32)*5)/9 ;
                 temp_label.label = _("%d").printf ((int) temp);     
             }
-            if(temp > 10){
+            if(temp < -10){
+                temp_unit.margin_left = 60;
+            }else if(temp > 10 || temp < 0){
                 temp_unit.margin_left = 45;
             }else{
                 temp_unit.margin_left = 15;
