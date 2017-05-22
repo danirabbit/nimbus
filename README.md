@@ -2,7 +2,8 @@
 
 See the current temperature and weather conditions for your location with this minimal color-changing applet.
 
-![Nimbus Screenshot](https://raw.github.com/danrabbit/nimbus/master/data/screenshot.png)
+![Nimbus Screenshot](data/screenshot02.png)
+![Nimbus Screenshot](data/screenshot.png)
 
 ## Building, Testing, and Installation
 
