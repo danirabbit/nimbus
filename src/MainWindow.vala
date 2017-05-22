@@ -69,9 +69,11 @@ public class MainWindow : Gtk.Dialog {
         temp_unit.set_relief (Gtk.ReliefStyle.NONE);
         temp_unit.clicked.connect ( () => {
             if (unit < 2) {
-                unit++;       
+                unit++;
+                weather_info.update ();
             } else{
                 unit = 0;
+                weather_info.update ();
             }
         });
 
