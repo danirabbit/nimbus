@@ -11,4 +11,4 @@ if not environ.get('DESTDIR'):
     print('Compiling gsettings schemas...')
     call(['glib-compile-schemas', SCHEMA_DIR])
     print('Refreshing icon cache...')
-    call(['gtk-update-icon-cache', '-qtf', ICONS_DIR])
+    call(['gtk-update-icon-cache', '-q', ICONS_DIR])
