@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 16:12-0700\n"
+"POT-Creation-Date: 2017-06-12 00:18+0200\n"
 "PO-Revision-Date: 2017-04-30 16:27-0700\n"
 "Last-Translator: Daniel Fore <daniel@elementary.io>\n"
 "Language-Team: Spanish\n"
@@ -17,15 +17,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/MainWindow.vala:39
+#: src/MainWindow.vala:37 data/com.github.danrabbit.nimbus.appdata.xml.in:7
+#: data/com.github.danrabbit.nimbus.desktop.in:3
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:82
 msgid "Unable to Get Location"
 msgstr "No fue posible encontrar tu ubicación"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 #, c-format
 msgid "%i°"
 msgstr "%i°"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
+#: data/com.github.danrabbit.nimbus.desktop.in:4
+msgid "See outside without going there"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:10
+msgid ""
+"See the current temperature and weather conditions for your location with "
+"this minimal color-changing applet."
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:12
+msgid "Click anywhere to fetch the latest weather"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:13
+msgid "Stays out of your way by always sticking to the desktop"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:14
+msgid "Move the window by dragging any part of it"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:15
+msgid "Quit with the handy shortcut Ctrl + Q"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:16
+msgid "Respects your system settings for temperature units"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:27
+msgid "Daniel Foré"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr ""

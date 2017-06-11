@@ -1,0 +1,3 @@
+src/MainWindow.vala
+data/com.github.danrabbit.nimbus.appdata.xml.in
+data/com.github.danrabbit.nimbus.desktop.in

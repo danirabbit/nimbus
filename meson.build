@@ -1,21 +1,30 @@
-project('com.github.danrabbit.nimbus', ['vala', 'c'],
-    version: '0.2.0'
+project(
+  'com.github.danrabbit.nimbus',
+  ['vala', 'c'],
+  version: '0.2.0'
 )
 
 gnome = import('gnome')
 i18n = import('i18n')
 
 asresources = gnome.compile_resources(
-    'as-resources', 'data/css.gresource.xml',
-    source_dir: 'data',
-    c_name: 'as'
+  'as-resources',
+  'data/css.gresource.xml',
+  source_dir: 'data',
+  c_name: 'as'
 )
 
-add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+add_project_arguments(
+  ['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
+  language: 'vala'
+)
 
 conf = configuration_data()
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-configure_file(output: 'config.h', configuration: conf)
+configure_file(
+  output: 'config.h',
+  configuration: conf
+)
 config_h_dir = include_directories('.')
 
 c_args = [
@@ -24,22 +33,22 @@ c_args = [
 ]
 
 executable(
-    'com.github.danrabbit.nimbus',
-    'src/Application.vala',
-    'src/MainWindow.vala',
-    asresources,
-    c_args: c_args,
-    dependencies: [
-        dependency('glib-2.0'),
-        dependency('gobject-2.0'),
-        dependency('gtk+-3.0'),
-        dependency('gweather-3.0'),
-        dependency('libgeoclue-2.0')
-    ],
-    install : true
+  'com.github.danrabbit.nimbus',
+  'src/Application.vala',
+  'src/MainWindow.vala',
+  asresources,
+  c_args: c_args,
+  dependencies: [
+    dependency('glib-2.0'),
+    dependency('gobject-2.0'),
+    dependency('gtk+-3.0'),
+    dependency('gweather-3.0'),
+    dependency('libgeoclue-2.0')
+  ],
+  install: true
 )
-
-meson.add_install_script('meson/post_install.py')
 
 subdir('data')
 subdir('po')
+
+meson.add_install_script('meson/post_install.py')

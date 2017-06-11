@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
-import os
-import subprocess
+from os import environ, path
+from subprocess import call
 
-schemadir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'glib-2.0', 'schemas')
+PREFIX = environ.get("MESON_INSTALL_PREFIX", "/usr/local")
+SCHEMA_DIR = path.join(PREFIX, 'share', 'glib-2.0', 'schemas')
+ICONS_DIR = path.join(PREFIX, 'share', 'icons', 'hicolor')
 
-if not os.environ.get('DESTDIR'):
-	print('Compiling gsettings schemas...')
-	subprocess.call(['glib-compile-schemas', schemadir])
+if not environ.get('DESTDIR'):
+    print('Compiling gsettings schemas...')
+    call(['glib-compile-schemas', SCHEMA_DIR])
+    print('Refreshing icon cache...')
+    call(['gtk-update-icon-cache', '-qtf', ICONS_DIR])
