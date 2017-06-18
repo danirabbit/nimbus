@@ -1,4 +1,5 @@
 # Nimbus
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.danrabbit.nimbus)
 
 See the current temperature and weather conditions for your location with this minimal color-changing applet.
 
