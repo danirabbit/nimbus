@@ -29,6 +29,7 @@ public class MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
     private GWeather.Location location;
     private GWeather.Info weather_info;
+    private int unit = GWeather.TemperatureUnit.to_real (GWeather.TemperatureUnit.DEFAULT) - 2; // 0 = fahrenheit, 1 = Celsius, 2 = Kelvin
 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
@@ -60,6 +61,22 @@ public class MainWindow : Gtk.Dialog {
         temp_label.margin_bottom = 3;
         temp_label.get_style_context ().add_class ("temperature");
 
+        var temp_unit = new Gtk.Button.with_label  ("");
+        temp_unit.halign = Gtk.Align.START;
+        temp_unit.margin_bottom = 10;
+        temp_unit.margin_left= 3;
+        temp_unit.get_style_context ().add_class ("unit");
+        temp_unit.set_relief (Gtk.ReliefStyle.NONE);
+        temp_unit.clicked.connect ( () => {
+            if (unit < 2) {
+                unit++;
+                weather_info.update ();
+            } else{
+                unit = 0;
+                weather_info.update ();
+            }
+        });
+
         var location_label = new Gtk.Label ("");
         location_label.halign = Gtk.Align.END;
         location_label.margin_bottom = 12;
@@ -71,6 +88,7 @@ public class MainWindow : Gtk.Dialog {
         grid.margin_start = 18;
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
+        grid.attach (temp_unit, 1, 0, 1, 2);
         grid.attach (weather_label, 2, 0, 1, 1);
         grid.attach (location_label, 2, 1, 1, 1);
 
@@ -119,8 +137,30 @@ public class MainWindow : Gtk.Dialog {
             weather_label.label = dgettext("libgweather", weather_info.get_sky ());
 
             double temp;
-            weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
-            temp_label.label = _("%i°").printf ((int) temp);
+            if (unit == 1) {
+                temp_unit.label = " C "; //Spaces to get larger Button 
+                weather_info.get_value_temp (GWeather.TemperatureUnit.CENTIGRADE, out temp);
+                temp_label.label = _("%i°").printf ( (int) temp);            
+            } else if (unit == 2) {
+                temp_unit.label = "K  "; 
+                weather_info.get_value_temp (GWeather.TemperatureUnit.KELVIN, out temp);
+                temp_label.label = _("%i").printf ( (int) temp);            
+            } else {
+                temp_unit.label = " F ";
+                weather_info.get_value_temp (GWeather.TemperatureUnit.FAHRENHEIT, out temp);
+                temp_label.label = _("%i°").printf ( (int) temp);
+            }
+
+            if (temp < -9 || temp > 99) {
+                temp_unit.margin_left = 85;
+            } else if (temp > 9 || temp < 0) {
+                temp_unit.margin_left = 55;
+            } else {
+                temp_unit.margin_left = 25;
+            }
+            if (unit == 2 &&  temp != 0) {
+                temp_unit.margin_left -= 20;
+            }
 
             string color_primary;
 
