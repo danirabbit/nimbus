@@ -173,11 +173,26 @@ public class MainWindow : Gtk.Dialog {
 
     public void on_location_updated (double latitude, double longitude) {
         location = GWeather.Location.get_world ();
-        location = location.find_nearest_city (latitude, longitude);
-        if (location != null) {
-            weather_info.location = location;
-            weather_info.update ();
-            stack.visible_child_name = "weather";
+        var file = File.new_for_path("nums.txt");
+
+        if (!file.query_exists ()) {
+          stderr.printf ("File '%s' doesn't exist.\n", file.get_path ());
         }
+        try{
+          var dis = new DataInputStream (file.read ());
+          string line;
+          while ((line = dis.read_line (null)) != null) {
+            latitude = double.parse(line);
+          }
+          location = location.find_nearest_city (latitude, longitude);
+          if (location != null) {
+              weather_info.location = location;
+              weather_info.update ();
+              stack.visible_child_name = "weather";
+          }
+        } catch (Error e){
+            error ("%s", e.message);
+        }
+
     }
 }
