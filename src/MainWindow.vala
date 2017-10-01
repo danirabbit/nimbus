@@ -194,8 +194,13 @@ public class MainWindow : Gtk.Dialog {
               stack.visible_child_name = "weather";
           }
         } catch (Error e){
-            error ("%s", e.message);
+          stderr.printf("Note: config file not present, falling back to geoclue");
+          location = location.find_nearest_city (latitude, longitude);
+          if (location != null) {
+              weather_info.location = location;
+              weather_info.update ();
+              stack.visible_child_name = "weather";
+          }
         }
-
     }
 }
