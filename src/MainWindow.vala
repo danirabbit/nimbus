@@ -40,6 +40,7 @@ public class MainWindow : Gtk.Dialog {
     }
 
     construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         set_keep_below (true);
         stick ();
 
