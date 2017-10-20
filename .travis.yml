@@ -1,16 +1,14 @@
 language: generic
 
-services:
- - docker
+    sudo: required
+    language: generic
 
-env:
- - DEPENDENCY_PACKAGES="appstream desktop-file-utils meson libgeoclue-2-dev libgtk-3-dev libgweather-3-dev libgee-0.8-dev valac"
+    services:
+    - docker
 
-install:
- - docker pull elementary/docker:loki
- - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja test"
- - docker pull elementary/docker:loki-unstable
- - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki-unstable /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && rm -rf build && meson build --prefix=/usr && cd build && ninja test"
+    script:
+    - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
 
-script:
- - echo BUILDS PASSED
+    branches:
+    except:
+        - /^debian\/\d/
