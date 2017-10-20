@@ -1,5 +1,3 @@
-language: generic
-
     sudo: required
     language: generic
 
