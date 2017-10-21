@@ -173,28 +173,11 @@ public class MainWindow : Gtk.Dialog {
 
     public void on_location_updated (double latitude, double longitude) {
         location = GWeather.Location.get_world ();
-        string path = (Environment.get_home_dir() + "/.config/nimbus");
-        var file = File.new_for_path(path);
-        if (!file.query_exists ()) {
-          stderr.printf ("File '%s' doesn't exist.\n", file.get_path ());
-        }
-        try{
-          var dis = new DataInputStream (file.read ());
-          string line;
-          double latLong[] = {0, 0};
-          int i = 0;
-          while ((line = dis.read_line (null)) != null) {
-            latLong[i] = double.parse(line);
-            i++;
-          }
-          location = location.find_nearest_city (latLong[0], latLong[1]);
-          if (location != null) {
-              weather_info.location = location;
-              weather_info.update ();
-              stack.visible_child_name = "weather";
-          }
-        } catch (Error e){
-          stderr.printf("Note: config file not present, falling back to geoclue");
+        var settings = new Settings ("com.github.danrabbit.nimbus");
+        var userLatitude = settings.get_double("latitude");
+        var userLongitude = settings.get_double("longitude");
+        //Checking for default values
+        if ((userLatitude == -1) && (userLongitude == -1)){
           location = location.find_nearest_city (latitude, longitude);
           if (location != null) {
               weather_info.location = location;
@@ -202,5 +185,14 @@ public class MainWindow : Gtk.Dialog {
               stack.visible_child_name = "weather";
           }
         }
+
+        else{
+          location = location.find_nearest_city (userLatitude, userLongitude);
+          if (location != null) {
+              weather_info.location = location;
+              weather_info.update ();
+              stack.visible_child_name = "weather";
+          }
+        }
+      }
     }
-}

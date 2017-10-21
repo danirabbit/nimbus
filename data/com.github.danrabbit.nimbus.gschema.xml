@@ -13,6 +13,15 @@
       <summary>Most recent y position of Nimbus</summary>
       <description>Most recent y position of Nimbus</description>
     </key>
+    <key name="latitude" type="d">
+      <default>-1</default>
+      <summary>Location Latitude</summary>
+      <description>The latitiude nimbus uses for weather location</description>
+    </key>
+    <key name="longitude" type="d">
+      <default>-1</default>
+      <summary>Location Longitude</summary>
+      <description>The longitude nimbus uses for weather location</description>
+    </key>
   </schema>
 </schemalist>
-
