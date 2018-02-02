@@ -58,11 +58,12 @@ public class Nimbus : Gtk.Application {
             }
         });
 
-        app_window.state_changed.connect (() => {
+        app_window.delete_event.connect (() => {
             int root_x, root_y;
             app_window.get_position (out root_x, out root_y);
             settings.set_int ("window-x", root_x);
             settings.set_int ("window-y", root_y);
+            return false;
         });
     }
 
