@@ -1,7 +1,7 @@
-# Spanish translations for com.github.danrabbit.nimbus package.
+# Catalan translations for com.github.danrabbit.nimbus package.
 # Copyright (C) 2017 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.danrabbit.nimbus package.
-# Daniel Fore <daniel@elementary.io>, 2017.
+# Eudald Gubert Roldan <eudaldgr@posteo.net>, 2018.
 #
 msgid ""
 msgstr ""
