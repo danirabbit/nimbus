@@ -18,6 +18,13 @@ conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
 
+gweather_deps = dependency('gweather-3.0')
+
+vala_args = []
+if(gweather_deps.version().version_compare('>=3.28'))
+    vala_args += ['--define=GWEATHER_3_28']
+endif
+
 c_args = [
   '-include', 'config.h',
   '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
@@ -28,12 +35,13 @@ executable(
     'src/Application.vala',
     'src/MainWindow.vala',
     asresources,
+    vala_args: vala_args,
     c_args: c_args,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
-        dependency('gweather-3.0'),
+        gweather_deps,
         dependency('libgeoclue-2.0')
     ],
     install : true
