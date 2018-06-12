@@ -178,11 +178,20 @@ public class MainWindow : Gtk.Dialog {
 
     public void on_location_updated (double latitude, double longitude) {
         location = GWeather.Location.get_world ();
-        location = location.find_nearest_city (latitude, longitude);
+        var settings = new Settings ("com.github.danrabbit.nimbus");
+        var user_latitude = settings.get_double ("latitude");
+        var user_longitude = settings.get_double ("longitude");
+        //Checking for default values
+        if ((user_latitude == -1) && (user_longitude == -1)){
+            location = location.find_nearest_city (latitude, longitude);
+        } else {
+            location = location.find_nearest_city (user_latitude, user_longitude);
+        }
+
         if (location != null) {
             weather_info.location = location;
             weather_info.update ();
             stack.visible_child_name = "weather";
         }
+      }
     }
-}
