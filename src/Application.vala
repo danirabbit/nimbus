@@ -19,9 +19,15 @@
 */
 
 public class Nimbus : Gtk.Application {
+    public static GLib.Settings settings;
+
     public Nimbus () {
         Object (application_id: "com.github.danrabbit.nimbus",
         flags: ApplicationFlags.FLAGS_NONE);
+    }
+
+    static construct {
+        settings = new Settings ("com.github.danrabbit.nimbus");
     }
 
     protected override void activate () {
@@ -31,8 +37,6 @@ public class Nimbus : Gtk.Application {
         }
 
         var app_window = new MainWindow (this);
-
-        var settings = new Settings ("com.github.danrabbit.nimbus");
 
         var window_x = settings.get_int ("window-x");
         var window_y = settings.get_int ("window-y");
@@ -56,13 +60,6 @@ public class Nimbus : Gtk.Application {
             if (app_window != null) {
                 app_window.destroy ();
             }
-        });
-
-        app_window.state_changed.connect (() => {
-            int root_x, root_y;
-            app_window.get_position (out root_x, out root_y);
-            settings.set_int ("window-x", root_x);
-            settings.set_int ("window-y", root_y);
         });
     }
 
