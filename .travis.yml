@@ -33,6 +33,6 @@ install:
 
 script:
   - houston ci
-    --name-human Camera
+    --name-human Nimbus
     --distribution $DIST
 
