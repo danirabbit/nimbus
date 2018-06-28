@@ -18,11 +18,11 @@ You'll need the following dependencies to build:
 You'll need the following dependencies to run:
 * geoclue-2.0
 
-Run `meson build` to configure the build environment and run `ninja test` to build and run automated tests
+Run `meson build` to configure the build environment and run `ninja test` to build
 
     meson build --prefix=/usr
     cd build
-    ninja test
+    ninja
 
 To install, use `ninja install`, then execute with `com.github.danrabbit.nimbus`
 
