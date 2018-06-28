@@ -2,13 +2,13 @@ Source: com.github.danrabbit.nimbus
 Section: x11
 Priority: extra
 Maintainer: Daniel Foré <daniel@elementary.io>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10.5.1),
                libgeoclue-2-dev,
                libgtk-3-dev,
                libgweather-3-dev,
                meson,
                valac
-Standards-Version: 3.9.3
+Standards-Version: 4.1.1
 
 Package: com.github.danrabbit.nimbus
 Architecture: any
