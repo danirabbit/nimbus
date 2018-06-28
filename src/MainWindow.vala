@@ -54,6 +54,8 @@ public class MainWindow : Gtk.Dialog {
 
         var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.DIALOG);
 
+        var settings = new Settings ("com.github.danrabbit.nimbus");
+
         var weather_label = new Gtk.Label (weather_info.get_sky ());
         weather_label.halign = Gtk.Align.END;
         weather_label.hexpand = true;
@@ -107,6 +109,14 @@ public class MainWindow : Gtk.Dialog {
                 return true;
             }
             return false;
+        });
+
+        button_release_event.connect ((e) => {   
+            int root_x, root_y;
+            this.get_position (out root_x, out root_y);
+            settings.set_int ("window-x", root_x);
+            settings.set_int ("window-y", root_y);
+            return true;
         });
 
         focus_in_event.connect (() => {
