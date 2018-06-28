@@ -21,10 +21,11 @@
 @define-color bg_highlight_color shade (@colorPrimary, 1.4);
 
 .titlebar,
+.titlebar image,
 .background {
     background-color: @colorPrimary;
     color: #fff;
-    icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
+    -gtk-icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
     text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
 }
 
