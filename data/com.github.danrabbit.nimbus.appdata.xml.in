@@ -16,6 +16,18 @@
       <li>Respects your system settings for temperature units</li>
     </ul>
   </description>
+  <releases>
+    <release version="0.3.0" date="2018-06-30" urgency="medium">
+      <description>
+        <p>Juno Updates!</p>
+        <ul>
+          <li>Add Catalan, French, German, and Japanese Translations</li>
+          <li>HiDPI icons support</li>
+          <li>Bug fixes and stability improvements</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
   <provides>
     <binary>com.github.danrabbit.nimbus</binary>
   </provides>
