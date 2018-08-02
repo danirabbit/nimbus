@@ -1,4 +1,4 @@
-com.github.danrabbit.nimbus (0.3.0) bionic; urgency=medium
+com.github.danrabbit.nimbus (0.3.1) bionic; urgency=medium
 
   * Add Catalan, French, German, and Japanese Translations
   * HiDPI icons support
