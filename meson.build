@@ -11,8 +11,6 @@ asresources = gnome.compile_resources(
     c_name: 'as'
 )
 
-add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
-
 conf = configuration_data()
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 configure_file(output: 'config.h', configuration: conf)
