@@ -1,14 +1,14 @@
 # German translations for com.github.danrabbit.nimbus package.
-# Copyright (C) 2017 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
+# Copyright (C) 2019 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.danrabbit.nimbus package.
-# Lloyd Carr <l.carr@gmx.de>, 2017.
+# Lloyd Carr <l.carr@gmx.de>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-06 12:12+0200\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2019-04-15 11:33+0200\n"
+"PO-Revision-Date: 2019-04-15 11:24+0200\n"
 "Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/MainWindow.vala:39
+#: src/MainWindow.vala:37
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:87
 msgid "Unable to Get Location"
 msgstr "Standort konnte nicht ermittelt werden"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:128
 #, c-format
 msgid "%i°"
 msgstr "%i°"

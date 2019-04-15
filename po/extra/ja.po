@@ -1,13 +1,13 @@
 # Japanese translations for extra package.
 # Copyright (C) 2018 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2018.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-15 23:15+0900\n"
+"POT-Creation-Date: 2019-04-15 11:27+0200\n"
 "PO-Revision-Date: 2018-10-15 23:32+0900\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: none\n"
@@ -16,25 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 #: data/com.github.danrabbit.nimbus.desktop.in:3
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 #: data/com.github.danrabbit.nimbus.desktop.in:4
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 msgid "See outside without going there"
 msgstr "外に出ずに天気を確認しましょう"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr "com.github.danrabbit.nimbus"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr "weather;temperature;天気;気温;"
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:10
 msgid ""
 "See the current temperature and weather conditions for your location with "
 "this minimal color-changing applet."
 msgstr ""
-"現在地の今の気温と天気の状況を、色変わりするこの最小限のアプレットで確認し"
-"ましょう。"
+"現在地の今の気温と天気の状況を、色変わりするこの最小限のアプレットで確認しま"
+"しょう。"
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:12
 msgid "Click anywhere to fetch the latest weather"
@@ -56,14 +63,22 @@ msgstr "便利なショートカット Ctrl + Q で終了します"
 msgid "Respects your system settings for temperature units"
 msgstr "お使いのシステムの温度の単位を使用します"
 
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:22
+msgid "Juno Updates!"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:24
+msgid "Add Catalan, French, German, and Japanese Translations"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:25
+msgid "HiDPI icons support"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:26
+msgid "Bug fixes and stability improvements"
+msgstr ""
+
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:68
 msgid "Daniel Foré"
 msgstr "Daniel Foré"
-
-#: data/com.github.danrabbit.nimbus.desktop.in:6
-msgid "com.github.danrabbit.nimbus"
-msgstr "com.github.danrabbit.nimbus"
-
-#: data/com.github.danrabbit.nimbus.desktop.in:7
-msgid "weather;temperature;"
-msgstr "weather;temperature;天気;気温;"

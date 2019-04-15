@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-28 09:01-0700\n"
+"POT-Creation-Date: 2019-04-15 11:27+0200\n"
 "PO-Revision-Date: 2019-03-04 13:20+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -17,23 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 #: data/com.github.danrabbit.nimbus.desktop.in:3
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 #: data/com.github.danrabbit.nimbus.desktop.in:4
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 msgid "See outside without going there"
 msgstr "Voir à l'extérieur sans y aller"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr "com.github.danrabbit.nimbus"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr "météo;température;"
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:10
 msgid ""
 "See the current temperature and weather conditions for your location with "
 "this minimal color-changing applet."
 msgstr ""
-"Voyez la température et les conditions météorologiques actuelles de votre région grâce "
-"à cette petite application aux couleurs changeantes."
+"Visualisez la température et les conditions météorologiques actuelles de "
+"votre emplacement grâce à cette petite application aux couleurs changeantes."
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:12
 msgid "Click anywhere to fetch the latest weather"
@@ -45,7 +53,8 @@ msgstr "Reste à l'écart de votre chemin en restant toujours sur le bureau"
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:14
 msgid "Move the window by dragging any part of it"
-msgstr "Déplacez la fenêtre en faisant glisser n'importe quelle partie de celle-ci"
+msgstr ""
+"Déplacez la fenêtre en faisant glisser n'importe quelle partie de celle-ci"
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:15
 msgid "Quit with the handy shortcut Ctrl + Q"
@@ -55,14 +64,22 @@ msgstr "Quittez avec le raccourci pratique Ctrl + Q"
 msgid "Respects your system settings for temperature units"
 msgstr "Respecte vos paramètres du système pour les unités de température"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:27
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:22
+msgid "Juno Updates!"
+msgstr "Mises à jour pour Juno !"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:24
+msgid "Add Catalan, French, German, and Japanese Translations"
+msgstr "Ajout des traductions en catalan, français, allemand et japonais"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:25
+msgid "HiDPI icons support"
+msgstr "Prise en charge des icônes HiDPI"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:26
+msgid "Bug fixes and stability improvements"
+msgstr "Corrections de bugs et améliorations de la stabilité"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:68
 msgid "Daniel Foré"
 msgstr "Daniel Foré"
-
-#: data/com.github.danrabbit.nimbus.desktop.in:6
-msgid "com.github.danrabbit.nimbus"
-msgstr "com.github.danrabbit.nimbus"
-
-#: data/com.github.danrabbit.nimbus.desktop.in:7
-msgid "weather;temperature;"
-msgstr "météo;température;"

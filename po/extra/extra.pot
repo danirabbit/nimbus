@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-28 09:01-0700\n"
+"POT-Creation-Date: 2019-04-15 11:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 #: data/com.github.danrabbit.nimbus.desktop.in:3
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
 msgid "Nimbus"
 msgstr ""
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 #: data/com.github.danrabbit.nimbus.desktop.in:4
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
 msgid "See outside without going there"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
 msgstr ""
 
 #: data/com.github.danrabbit.nimbus.appdata.xml.in:10
@@ -53,14 +61,22 @@ msgstr ""
 msgid "Respects your system settings for temperature units"
 msgstr ""
 
-#: data/com.github.danrabbit.nimbus.appdata.xml.in:27
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:22
+msgid "Juno Updates!"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:24
+msgid "Add Catalan, French, German, and Japanese Translations"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:25
+msgid "HiDPI icons support"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:26
+msgid "Bug fixes and stability improvements"
+msgstr ""
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:68
 msgid "Daniel Foré"
-msgstr ""
-
-#: data/com.github.danrabbit.nimbus.desktop.in:6
-msgid "com.github.danrabbit.nimbus"
-msgstr ""
-
-#: data/com.github.danrabbit.nimbus.desktop.in:7
-msgid "weather;temperature;"
 msgstr ""

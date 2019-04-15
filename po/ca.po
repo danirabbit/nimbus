@@ -1,31 +1,30 @@
 # Catalan translations for com.github.danrabbit.nimbus package.
-# Copyright (C) 2017 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
+# Copyright (C) 2019 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.danrabbit.nimbus package.
-# Eudald Gubert Roldan <eudaldgr@posteo.net>, 2018.
+# Eudald Gubert Roldan <eudaldgr@posteo.net>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 08:30+0100\n"
-"PO-Revision-Date: 2017-05-01 08:30+0100\n"
+"POT-Creation-Date: 2019-04-15 11:33+0200\n"
+"PO-Revision-Date: 2019-04-15 11:24+0200\n"
 "Last-Translator: Eudald Gubert Roldan <eudaldgr@posteo.net>\n"
-"Language-Team: Catalan\n"
+"Language-Team: none\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/MainWindow.vala:39
+#: src/MainWindow.vala:37
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:87
 msgid "Unable to Get Location"
 msgstr "No ha estat possible torbar la teva ubicació"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:128
 #, c-format
 msgid "%i°"
 msgstr "%i°"

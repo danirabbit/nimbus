@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 16:12-0700\n"
+"POT-Creation-Date: 2019-04-15 11:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:39
+#: src/MainWindow.vala:37
 msgid "Nimbus"
 msgstr ""
 
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:87
 msgid "Unable to Get Location"
 msgstr ""
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:128
 #, c-format
 msgid "%i°"
 msgstr ""
