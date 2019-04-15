@@ -1,4 +1,4 @@
-project('com.github.danrabbit.nimbus', ['vala', 'c'],
+project('com.github.danrabbit.nimbus', 'vala', 'c',
     version: '0.2.0'
 )
 
