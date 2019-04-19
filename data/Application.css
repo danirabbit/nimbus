@@ -20,14 +20,14 @@
 @define-color colorPrimary #42baea;
 @define-color bg_highlight_color shade (@colorPrimary, 1.4);
 
-grid {
-    margin-top: -6px;
+.titlebar,
+.background {
+    background-color: @colorPrimary;
 }
 
 .titlebar,
-.titlebar image,
-.background {
-    background-color: @colorPrimary;
+.background,
+.titlebar image {
     color: #fff;
     -gtk-icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
     text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);

@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class MainWindow : Gtk.Dialog {
+public class MainWindow : Gtk.ApplicationWindow {
     private const string COLOR_PRIMARY = """
         @define-color colorPrimary %s;
         .background,
@@ -31,16 +31,17 @@ public class MainWindow : Gtk.Dialog {
     private GWeather.Info weather_info;
 
     public MainWindow (Gtk.Application application) {
-        Object (application: application,
-                icon_name: "com.github.danrabbit.nimbus",
-                resizable: false,
-                title: _("Nimbus"),
-                height_request: 272,
-                width_request: 500);
+        Object (
+            application: application,
+            icon_name: "com.github.danrabbit.nimbus",
+            resizable: false,
+            title: _("Nimbus"),
+            width_request: 500
+        );
     }
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        get_style_context ().add_class ("rounded");
         set_keep_below (true);
         stick ();
 
@@ -71,9 +72,8 @@ public class MainWindow : Gtk.Dialog {
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
-        grid.margin_bottom = 6;
-        grid.margin_end = 18;
-        grid.margin_start = 18;
+        grid.margin = 24;
+        grid.margin_bottom = 21;
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
         grid.attach (weather_label, 2, 0, 1, 1);
@@ -93,21 +93,19 @@ public class MainWindow : Gtk.Dialog {
         stack.add_named (grid, "weather");
         stack.add_named (alert_label, "alert");
 
-        var content_box = get_content_area () as Gtk.Box;
-        content_box.border_width = 0;
-        content_box.add (stack);
-        content_box.show_all ();
+        var headerbar = new Gtk.HeaderBar ();
+        headerbar.set_custom_title (stack);
 
-        var action_box = get_action_area () as Gtk.Box;
-        action_box.visible = false;
+        var headerbar_style_context = headerbar.get_style_context ();
+        headerbar_style_context.add_class ("default-decoration");
+        headerbar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
-        button_press_event.connect ((e) => {
-            if (e.button == Gdk.BUTTON_PRIMARY) {
-                begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
-                return true;
-            }
-            return false;
-        });
+        var spacer = new Gtk.Grid ();
+        spacer.height_request = 3;
+
+        add (spacer);
+        set_titlebar (headerbar);
+        show_all ();
 
         focus_in_event.connect (() => {
             weather_info.update ();
