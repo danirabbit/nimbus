@@ -1,0 +1,68 @@
+# Danish translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# siigdev, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-28 09:01-0700\n"
+"PO-Revision-Date: 2019-03-04 13:20+0100\n"
+"Last-Translator: siigdev\n"
+"Language-Team: \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
+#: data/com.github.danrabbit.nimbus.desktop.in:3
+msgid "Nimbus"
+msgstr "Nimbus"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
+#: data/com.github.danrabbit.nimbus.desktop.in:4
+msgid "See outside without going there"
+msgstr "Se udenfor uden at gå derud"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:10
+msgid ""
+"See the current temperature and weather conditions for your location with "
+"this minimal color-changing applet."
+msgstr ""
+"Se temperaturen og vejrforholdene for din lokation med denne minimalistiske "
+"farveskiftende applikation."
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:12
+msgid "Click anywhere to fetch the latest weather"
+msgstr "Klik hvor som helst for at få de nyeste vejrmeldinger"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:13
+msgid "Stays out of your way by always sticking to the desktop"
+msgstr "Holder sig i baggrunden ved at være fastsat til skrivebordet"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:14
+msgid "Move the window by dragging any part of it"
+msgstr "Ryk vinduet ved at trække hvor som helst i applikationen"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:15
+msgid "Quit with the handy shortcut Ctrl + Q"
+msgstr "Luk ved brug af genvejen Ctrl + Q"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:16
+msgid "Respects your system settings for temperature units"
+msgstr "Respekterer dine systemindstillinger for temperaturenhed"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:27
+msgid "Daniel Foré"
+msgstr "Daniel Foré"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr "com.github.danrabbit.nimbus"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr "vejr;temperatur;"
