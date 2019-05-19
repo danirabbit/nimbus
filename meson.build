@@ -15,11 +15,6 @@ asresources = gnome.compile_resources(
 
 gweather_dep = dependency('gweather-3.0')
 
-vala_args = []
-if(gweather_dep.version().version_compare('>=3.28'))
-    vala_args += ['--define=GWEATHER_3_28']
-endif
-
 c_args = [
   '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
 ]
@@ -29,7 +24,6 @@ executable(
     'src/Application.vala',
     'src/MainWindow.vala',
     asresources,
-    vala_args: vala_args,
     c_args: c_args,
     dependencies: [
         dependency('glib-2.0'),
