@@ -1,0 +1,73 @@
+# Portuguese (Portugal) translations for com.github.danrabbit.nimbus package.
+# Copyright (C) 2017 THE com.github.danrabbit.nimbus'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.danrabbit.nimbus package.
+# André Barata <andretiagob@protonmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-28 09:01-0700\n"
+"PO-Revision-Date: 2020-08-31 21:17+0100\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: André Barata <andretiagob@protonmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt\n"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:7
+#: data/com.github.danrabbit.nimbus.desktop.in:3
+msgid "Nimbus"
+msgstr "Nimbus"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:8
+#: data/com.github.danrabbit.nimbus.desktop.in:4
+msgid "See outside without going there"
+msgstr "Veja o que está la fora sem se deslocar"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:10
+msgid ""
+"See the current temperature and weather conditions for your location with "
+"this minimal color-changing applet."
+msgstr ""
+"Veja a temperatura atual e as condições meteorológicas para a sua "
+"localização com esta mini aplicação com mudança de cor."
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:12
+msgid "Click anywhere to fetch the latest weather"
+msgstr ""
+"Clique em qualquer lado para pesquisar a informação mais recente sobre a "
+"meteorologia"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:13
+msgid "Stays out of your way by always sticking to the desktop"
+msgstr ""
+"Fica fora do seu caminho, mantém-se sempre colado ao seu ambiente de "
+"trabalho"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:14
+msgid "Move the window by dragging any part of it"
+msgstr "Mova a janela arrastando o rato em qualquer parte dela"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:15
+msgid "Quit with the handy shortcut Ctrl + Q"
+msgstr "Saía com o atalho conveniente Ctrl + Q"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:16
+msgid "Respects your system settings for temperature units"
+msgstr "Respeita as definições de unidades de temperatura do seu sistema"
+
+#: data/com.github.danrabbit.nimbus.appdata.xml.in:27
+msgid "Daniel Foré"
+msgstr "Daniel Foré"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:6
+msgid "com.github.danrabbit.nimbus"
+msgstr "com.github.danrabbit.nimbus"
+
+#: data/com.github.danrabbit.nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr "weather;meteorologia;temperature;temperatura;"
