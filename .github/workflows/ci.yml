@@ -1,0 +1,32 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  flatpak:
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions
+      options: --privileged
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v3
+      with:
+        bundle: nimbus.flatpak
+        manifest-path: com.github.danrabbit.nimbus.yml
+        run-tests: true
+        repository-name: elementary
+        repository-url: https://flatpak.elementary.io/elementary.flatpakrepo
+        cache-key: "flatpak-builder-${{ github.sha }}"
+
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: valalang/lint
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lint
+      run: io.elementary.vala-lint -d .
