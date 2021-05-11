@@ -112,10 +112,10 @@ public class MainWindow : Gtk.ApplicationWindow {
                 return;
             }
 
-            location_label.label = dgettext("libgweather-locations", location.get_city_name ());
+            location_label.label = dgettext ("libgweather-locations", location.get_city_name ());
 
             weather_icon.icon_name = weather_info.get_symbolic_icon_name ();
-            weather_label.label = dgettext("libgweather", weather_info.get_sky ());
+            weather_label.label = dgettext ("libgweather", weather_info.get_sky ());
 
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);

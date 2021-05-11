@@ -41,7 +41,7 @@ public class Nimbus : Gtk.Application {
         var window_x = settings.get_int ("window-x");
         var window_y = settings.get_int ("window-y");
 
-        if (window_x != -1 ||  window_y != -1) {
+        if (window_x != -1 || window_y != -1) {
             app_window.move (window_x, window_y);
         }
 
