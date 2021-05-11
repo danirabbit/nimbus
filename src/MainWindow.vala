@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class MainWindow : Gtk.ApplicationWindow {
+public class MainWindow : Hdy.ApplicationWindow {
     private const string COLOR_PRIMARY = """
         @define-color colorPrimary %s;
         .background,
@@ -41,7 +41,8 @@ public class MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        get_style_context ().add_class ("rounded");
+        Hdy.init ();
+
         set_keep_below (true);
         stick ();
 
@@ -82,25 +83,19 @@ public class MainWindow : Gtk.ApplicationWindow {
 
         var alert_label = new Gtk.Label (_("Unable to Get Location"));
 
-        stack = new Gtk.Stack ();
-        stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        stack.vhomogeneous = true;
+        stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE,
+            vhomogeneous = true
+        };
         stack.add (spinner);
         stack.add_named (grid, "weather");
         stack.add_named (alert_label, "alert");
 
-        var headerbar = new Gtk.HeaderBar ();
-        headerbar.set_custom_title (stack);
+        var window_handle = new Hdy.WindowHandle ();
+        window_handle.add (stack);
 
-        var headerbar_style_context = headerbar.get_style_context ();
-        headerbar_style_context.add_class ("default-decoration");
-        headerbar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+        add (window_handle);
 
-        var spacer = new Gtk.Grid ();
-        spacer.height_request = 3;
-
-        add (spacer);
-        set_titlebar (headerbar);
         show_all ();
 
         focus_in_event.connect (() => {
