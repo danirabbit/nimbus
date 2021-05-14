@@ -10,6 +10,16 @@ finish-args:
 
   - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/nimbus/'
 modules:
+  - name: geocode-glib
+    config-opts:
+      - '-Denable-installed-tests=false'
+      - '-Denable-gtk-doc=false'
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libgweather.git
+        tag: '3.26.2'
+
   - name: weather
     config-opts:
       - '-Dgtk_doc=false'
