@@ -17,7 +17,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libgweather.git
-        tag: 40.0
+        tag: '40.0'
 
   - name: nimbus
     buildsystem: meson
