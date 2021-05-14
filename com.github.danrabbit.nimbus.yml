@@ -10,7 +10,16 @@ finish-args:
 
   - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/nimbus/'
 modules:
-  - name: nimubs
+  - name: weather
+    config-opts:
+      - '-Dgtk_doc=false'
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libgweather.git
+        tag: 40.0
+
+  - name: nimbus
     buildsystem: meson
     sources:
       - type: dir
