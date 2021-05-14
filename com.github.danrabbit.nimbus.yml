@@ -17,10 +17,10 @@ modules:
     buildsystem: meson
     sources:
       - type: git
-        url: https://gitlab.gnome.org/GNOME/libgweather.git
+        url: https://gitlab.gnome.org/GNOME/geocode-glib.git
         tag: '3.26.2'
 
-  - name: weather
+  - name: gweather
     config-opts:
       - '-Dgtk_doc=false'
     buildsystem: meson
