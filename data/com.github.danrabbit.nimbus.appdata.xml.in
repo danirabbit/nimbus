@@ -17,6 +17,15 @@
     </ul>
   </description>
   <releases>
+    <release version="0.3.3" date="2021-05-14" urgency="medium">
+      <description>
+        <p>Odin Updates!</p>
+        <ul>
+          <li>Add Danish and Dutch and update French and Japanese Translations</li>
+          <li>Bug fixes and stability improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.3.2" date="2018-06-30" urgency="medium">
       <description>
         <p>Juno Updates!</p>
