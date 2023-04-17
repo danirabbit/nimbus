@@ -8,7 +8,6 @@ finish-args:
   - '--socket=fallback-x11'
   - '--socket=wayland'
   - '--share=network'
-  - '--system-talk-name=org.freedesktop.GeoClue2'
 
   - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/nimbus/'
 modules:
