@@ -13,7 +13,7 @@ asresources = gnome.compile_resources(
     c_name: 'as'
 )
 
-gweather_dep = dependency('gweather-3.0')
+gweather_dep = dependency('gweather4')
 
 c_args = [
   '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
