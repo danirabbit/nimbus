@@ -15,16 +15,11 @@ asresources = gnome.compile_resources(
 
 gweather_dep = dependency('gweather4')
 
-c_args = [
-  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
-]
-
 executable(
-    'com.github.danrabbit.nimbus',
+    meson.project_name(),
     'src/Application.vala',
     'src/MainWindow.vala',
     asresources,
-    c_args: c_args,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
