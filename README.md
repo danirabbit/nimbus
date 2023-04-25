@@ -9,9 +9,9 @@ See the current temperature and weather conditions for your location with this m
 
 You'll need the following dependencies to build:
 * libgeoclue-2-dev
-* libgtk-3-dev
+* libgranite-7-dev
+* libgtk-4-dev
 * libgweather-4-dev
-* libhandy-1-dev
 * meson
 * valac
 
@@ -26,5 +26,5 @@ Run `meson build` to configure the build environment and run `ninja test` to bui
 
 To install, use `ninja install`, then execute with `com.github.danrabbit.nimbus`
 
-    sudo ninja install
+    ninja install
     com.github.danrabbit.nimbus
