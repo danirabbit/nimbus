@@ -24,7 +24,7 @@ Run `meson build` to configure the build environment and run `ninja test` to bui
     cd build
     ninja
 
-To install, use `ninja install`, then execute with `com.github.danrabbit.nimbus`
+To install, use `ninja install`, then execute with `io.github.danirabbit.nimbus`
 
     ninja install
-    com.github.danrabbit.nimbus
+    io.github.danirabbit.nimbus

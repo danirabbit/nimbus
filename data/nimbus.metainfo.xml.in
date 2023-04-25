@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 Daniel Foré <daniel@elementary.io> -->
+<!-- Copyright 2017-2023 Danielle Foré <daniel@elementary.io> -->
 <component type="desktop-application">
-  <id>com.github.danrabbit.nimbus</id>
+  <id>io.github.danirabbit.nimbus</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Nimbus</name>
@@ -38,7 +38,7 @@
     </release>
   </releases>
   <provides>
-    <binary>com.github.danrabbit.nimbus</binary>
+    <binary>io.github.danirabbit.nimbus</binary>
   </provides>
   <screenshots>
     <screenshot type="default">
@@ -74,9 +74,9 @@
     <content_attribute id="money-purchasing">none</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
-  <developer_name>Daniel Foré</developer_name>
-  <url type="homepage">http://danielfore.com</url>
-  <url type="bugtracker">https://github.com/danrabbit/nimbus/issues</url>
+  <developer_name>Danielle Foré</developer_name>
+  <url type="homepage">https://danirabbit.github.io/</url>
+  <url type="bugtracker">https://github.com/danirabbit/nimbus/issues</url>
   <custom>
     <value key="x-appcenter-color-primary">#e9f4fc</value>
     <value key="x-appcenter-color-primary-text">#044b6c</value>

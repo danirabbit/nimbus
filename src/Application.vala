@@ -6,7 +6,7 @@
 public class Nimbus : Gtk.Application {
     public Nimbus () {
         Object (
-            application_id: "com.github.danrabbit.nimbus",
+            application_id: "io.github.danirabbit.nimbus",
             flags: ApplicationFlags.FLAGS_NONE
         );
     }
@@ -25,7 +25,7 @@ public class Nimbus : Gtk.Application {
     protected override void activate () {
         if (active_window == null) {
             var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("com/github/danrabbit/nimbus/Application.css");
+            provider.load_from_resource ("io/github/danirabbit/nimbus/Application.css");
             Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             add_window (new MainWindow ());
