@@ -1,10 +1,10 @@
 [Desktop Entry]
 Name=Nimbus
 Comment=See outside without going there
-Exec=com.github.danrabbit.nimbus
-Icon=com.github.danrabbit.nimbus
+Exec=io.github.danirabbit.nimbus
+Icon=io.github.danirabbit.nimbus
 Keywords=weather;temperature;
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Utility;
+Categories=GTK;Utility;Network;

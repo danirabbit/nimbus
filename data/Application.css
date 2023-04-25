@@ -17,26 +17,33 @@
 * Boston, MA 02110-1301 USA
 */
 
-@define-color colorPrimary #42baea;
-@define-color bg_highlight_color shade (@colorPrimary, 1.4);
+@define-color colorPrimary @BLUEBERRY_500;
 
-.titlebar,
-.background {
+window {
+    padding: 2em;
     background-color: @colorPrimary;
-}
-
-.titlebar,
-.background,
-.titlebar image {
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.3)
+        );
     color: #fff;
-    -gtk-icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
-    text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
+    font-weight: 500;
+    text-shadow:
+        0 1px 0 shade(@colorPrimary, 0.6),
+        0 2px 4px shade(@colorPrimary, 0.85);
+    transition: background 600ms ease-in-out;
+    -gtk-icon-shadow:
+        0 1px 0 shade(@colorPrimary, 0.6),
+        0 2px 4px shade(@colorPrimary, 0.85);
 }
 
-.weather {
-    font-size: 14pt;
+.title-3 {
+    font-size: 1.5em;
 }
 
-.temperature {
-    font-size: 36pt;
+.title-1 {
+    font-size: 3em;
+    font-weight: 800;
 }
