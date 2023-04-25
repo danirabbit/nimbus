@@ -49,7 +49,7 @@ public class MainWindow : Hdy.ApplicationWindow {
         get_location.begin ();
 
         weather_info = new GWeather.Info (location) {
-            contact_info = "daniel@elementary.io"
+            contact_info = "danielle@elementary.io"
         };
 
         var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.DIALOG);
