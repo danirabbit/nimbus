@@ -26,9 +26,9 @@ public class Nimbus : Gtk.Application {
         if (active_window == null) {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("com/github/danrabbit/nimbus/Application.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            add_window (new MainWindow (this));
+            add_window (new MainWindow ());
         }
 
         active_window.present ();

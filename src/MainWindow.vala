@@ -3,90 +3,79 @@
  * SPDX-FileCopyrightText: 2017-2023 Danielle Foré (https://danirabbit.github.io/)
  */
 
-public class MainWindow : Hdy.ApplicationWindow {
+public class MainWindow : Gtk.ApplicationWindow {
     private const string COLOR_PRIMARY = """
         @define-color colorPrimary %s;
-        .background,
-        .titlebar {
-            transition: all 600ms ease-in-out;
-        }
     """;
 
     private Gtk.Stack stack;
     private GWeather.Location location;
     private GWeather.Info weather_info;
 
-    public MainWindow (Gtk.Application application) {
-        Object (
-            application: application,
-            icon_name: "com.github.danrabbit.nimbus",
-            resizable: false,
-            title: _("Nimbus"),
-            width_request: 500
-        );
-    }
-
     construct {
-        Hdy.init ();
-
-        set_keep_below (true);
-        stick ();
-
         get_location.begin ();
 
         weather_info = new GWeather.Info (location) {
             contact_info = "danielle@elementary.io"
         };
 
-        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name (), Gtk.IconSize.DIALOG);
+        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name ()) {
+            pixel_size = 48
+        };
 
-        var weather_label = new Gtk.Label (weather_info.get_sky ());
-        weather_label.halign = Gtk.Align.END;
-        weather_label.hexpand = true;
-        weather_label.margin_top = 6;
-        weather_label.get_style_context ().add_class ("weather");
+        var weather_label = new Gtk.Label (weather_info.get_sky ()) {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.END,
+            hexpand = true
+        };
+        weather_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var temp_label = new Gtk.Label (weather_info.get_temp ());
-        temp_label.halign = Gtk.Align.START;
-        temp_label.margin_bottom = 3;
-        temp_label.get_style_context ().add_class ("temperature");
+        var temp_label = new Gtk.Label (weather_info.get_temp ()) {
+            halign = Gtk.Align.START
+        };
+        temp_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
-        var location_label = new Gtk.Label ("");
-        location_label.halign = Gtk.Align.END;
-        location_label.margin_bottom = 12;
+        var location_label = new Gtk.Label ("") {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.START
+        };
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 12;
-        grid.margin = 24;
-        grid.margin_bottom = 21;
+        var grid = new Gtk.Grid () {
+            column_spacing = 12
+        };
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
-        grid.attach (weather_label, 2, 0, 1, 1);
-        grid.attach (location_label, 2, 1, 1, 1);
+        grid.attach (weather_label, 2, 0);
+        grid.attach (location_label, 2, 1);
 
-        var spinner = new Gtk.Spinner ();
-        spinner.active = true;
-        spinner.halign = Gtk.Align.CENTER;
-        spinner.vexpand = true;
+        var spinner = new Gtk.Spinner () {
+            halign = Gtk.Align.CENTER,
+            vexpand = true,
+            spinning = true
+        };
 
         var alert_label = new Gtk.Label (_("Unable to Get Location"));
 
         stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE,
+            valign = Gtk.Align.CENTER,
             vhomogeneous = true
         };
-        stack.add (spinner);
+        stack.add_child (spinner);
         stack.add_named (grid, "weather");
         stack.add_named (alert_label, "alert");
 
-        var window_handle = new Hdy.WindowHandle ();
-        window_handle.add (stack);
+        var window_handle = new Gtk.WindowHandle () {
+            child = stack
+        };
 
-        add (window_handle);
+        child = window_handle;
+        default_width = 350;
+        icon_name = Application.get_default ().application_id;
+        titlebar = new Gtk.Grid () { visible = false };
+        title = _("Nimbus");
 
-        show_all ();
-
-        focus_in_event.connect (() => {
+        notify["is-active"].connect (() => {
             weather_info.update ();
         });
 
@@ -128,9 +117,9 @@ public class MainWindow : Hdy.ApplicationWindow {
             var provider = new Gtk.CssProvider ();
             try {
                 var colored_css = COLOR_PRIMARY.printf (color_primary);
-                provider.load_from_data (colored_css, colored_css.length);
+                provider.load_from_data (colored_css.data);
 
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
@@ -139,7 +128,7 @@ public class MainWindow : Hdy.ApplicationWindow {
 
     public async void get_location () {
         try {
-            var simple = yield new GClue.Simple ("com.github.danrabbit.nimbus", GClue.AccuracyLevel.CITY, null);
+            var simple = yield new GClue.Simple (Application.get_default ().application_id, GClue.AccuracyLevel.CITY, null);
 
             simple.notify["location"].connect (() => {
                 on_location_updated (simple.location.latitude, simple.location.longitude);
