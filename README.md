@@ -7,11 +7,10 @@ See the current temperature and weather conditions for your location with this m
 
 ## Building, Testing, and Installation
 
-
 You'll need the following dependencies to build:
 * libgeoclue-2-dev
 * libgtk-3-dev
-* libgweather-3-dev
+* libgweather-4-dev
 * libhandy-1-dev
 * meson
 * valac

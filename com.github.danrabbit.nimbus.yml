@@ -1,6 +1,6 @@
 app-id: com.github.danrabbit.nimbus
 runtime: io.elementary.Platform
-runtime-version: 'daily'
+runtime-version: '7.2'
 sdk: io.elementary.Sdk
 command: com.github.danrabbit.nimbus
 finish-args:
@@ -8,7 +8,6 @@ finish-args:
   - '--socket=fallback-x11'
   - '--socket=wayland'
   - '--share=network'
-  - '--system-talk-name=org.freedesktop.GeoClue2'
 
   - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/nimbus/'
 modules:
@@ -16,20 +15,22 @@ modules:
     config-opts:
       - '-Denable-installed-tests=false'
       - '-Denable-gtk-doc=false'
+      - '-Dsoup2=false'
     buildsystem: meson
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/geocode-glib.git
-        tag: '3.26.2'
+      - type: archive
+        url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
+        sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
 
   - name: gweather
     config-opts:
       - '-Dgtk_doc=false'
+      - '-Dtests=false'
     buildsystem: meson
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libgweather.git
-        tag: '40.0'
+      - type: archive
+        url: https://download.gnome.org/sources/libgweather/4.2/libgweather-4.2.0.tar.xz
+        sha256: af8a812da0d8976a000e1d62572c256086a817323fbf35b066dbfdd8d2ca6203
 
   - name: nimbus
     buildsystem: meson
