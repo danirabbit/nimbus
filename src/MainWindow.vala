@@ -110,7 +110,7 @@ public class MainWindow : Gtk.ApplicationWindow {
                     color_primary = "#6fc3ff";
                     break;
                 default:
-                    color_primary = "#42baea";
+                    color_primary = "@BLUEBERRY_500";
                     break;
             }
 
