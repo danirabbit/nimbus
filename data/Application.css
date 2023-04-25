@@ -17,11 +17,17 @@
 * Boston, MA 02110-1301 USA
 */
 
-@define-color colorPrimary #42baea;
+@define-color colorPrimary @BLUEBERRY_500;
 
 window {
     padding: 2em;
     background-color: @colorPrimary;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.3)
+        );
     color: #fff;
     font-weight: 500;
     text-shadow:
