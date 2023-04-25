@@ -1,21 +1,7 @@
 /*
-* Copyright (c) 2017-2019 Daniel Foré (http://danielfore.com)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 Danielle Foré (https://danirabbit.github.io/)
+ */
 
 public class MainWindow : Hdy.ApplicationWindow {
     private const string COLOR_PRIMARY = """
@@ -175,14 +161,5 @@ public class MainWindow : Hdy.ApplicationWindow {
             weather_info.update ();
             stack.visible_child_name = "weather";
         }
-    }
-
-    public override bool configure_event (Gdk.EventConfigure event) {
-        int root_x, root_y;
-        get_position (out root_x, out root_y);
-        Nimbus.settings.set_int ("window-x", root_x);
-        Nimbus.settings.set_int ("window-y", root_y);
-
-        return base.configure_event (event);
     }
 }
