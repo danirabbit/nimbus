@@ -18,16 +18,23 @@
 */
 
 window {
-    padding: 2em;
-    font-weight: 500;
     transition: all 600ms ease-in-out;
 }
 
-.title-3 {
+window spinner {
+    margin: 2em;
+}
+
+.weather {
+    padding: 2em;
+    font-weight: 500;
+}
+
+.weather .title-3 {
     font-size: 1.5em;
 }
 
-.title-1 {
+.weather .title-1 {
     font-size: 3em;
     font-weight: 800;
 }

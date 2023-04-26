@@ -5,12 +5,13 @@
 
 public class MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack stack;
-    private GWeather.Location location;
+    private Gtk.Spinner spinner;
+    private Gtk.Grid grid;
+    private Granite.Placeholder placeholder;
+    private GWeather.Location? location = null;
     private GWeather.Info weather_info;
 
     construct {
-        get_location.begin ();
-
         weather_info = new GWeather.Info (location) {
             contact_info = "danielle@elementary.io"
         };
@@ -36,30 +37,34 @@ public class MainWindow : Gtk.ApplicationWindow {
             valign = Gtk.Align.START
         };
 
-        var grid = new Gtk.Grid () {
+        grid = new Gtk.Grid () {
             column_spacing = 12
         };
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
         grid.attach (weather_label, 2, 0);
         grid.attach (location_label, 2, 1);
+        grid.add_css_class ("weather");
 
-        var spinner = new Gtk.Spinner () {
+        spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER,
             vexpand = true,
             spinning = true
         };
 
-        var alert_label = new Gtk.Label (_("Unable to Get Location"));
+        placeholder = new Granite.Placeholder (_("Unable to Get Location")) {
+            icon = new ThemedIcon ("location-disabled-symbolic"),
+            description = _("Make sure location access is turned on in <a href='settings://privacy/location'>System Settings → Security &amp; Privacy</a>")
+        };
 
         stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE,
             valign = Gtk.Align.CENTER,
-            vhomogeneous = true
+            vhomogeneous = false
         };
         stack.add_child (spinner);
-        stack.add_named (grid, "weather");
-        stack.add_named (alert_label, "alert");
+        stack.add_child (grid);
+        stack.add_child (placeholder);
 
         var window_handle = new Gtk.WindowHandle () {
             child = stack
@@ -71,8 +76,18 @@ public class MainWindow : Gtk.ApplicationWindow {
         titlebar = new Gtk.Grid () { visible = false };
         title = _("Nimbus");
 
+        get_location ();
+
         notify["is-active"].connect (() => {
-            weather_info.update ();
+            if (stack.visible_child == spinner || !is_active) {
+                return;
+            }
+
+            if (location == null) {
+                get_location ();
+            } else {
+                weather_info.update ();
+            }
         });
 
         weather_info.updated.connect (() => {
@@ -107,29 +122,40 @@ public class MainWindow : Gtk.ApplicationWindow {
         });
     }
 
-    public async void get_location () {
+    private void get_location () {
+        stack.visible_child = spinner;
+
+        get_gclue_simple.begin ((obj, res) => {
+            var simple = get_gclue_simple.end (res);
+            if (simple != null) {
+                simple.notify["location"].connect (() => {
+                    on_location_updated (simple.location.latitude, simple.location.longitude);
+                });
+
+                on_location_updated (simple.location.latitude, simple.location.longitude);
+            } else {
+                stack.visible_child = placeholder;
+            }
+        });
+    }
+
+    private async GClue.Simple? get_gclue_simple () {
         try {
             var simple = yield new GClue.Simple (Application.get_default ().application_id, GClue.AccuracyLevel.CITY, null);
-
-            simple.notify["location"].connect (() => {
-                on_location_updated (simple.location.latitude, simple.location.longitude);
-            });
-
-            on_location_updated (simple.location.latitude, simple.location.longitude);
+            return simple;
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
-            stack.visible_child_name = "alert";
-            return;
+            return null;
         }
     }
 
-    public void on_location_updated (double latitude, double longitude) {
+    private void on_location_updated (double latitude, double longitude) {
         location = GWeather.Location.get_world ();
         location = location.find_nearest_city (latitude, longitude);
         if (location != null) {
             weather_info.location = location;
             weather_info.update ();
-            stack.visible_child_name = "weather";
+            stack.visible_child = grid;
         }
     }
 }

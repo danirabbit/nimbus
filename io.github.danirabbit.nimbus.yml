@@ -39,6 +39,7 @@ modules:
     buildsystem: meson
     config-opts:
       - '-Denable-gtk-doc=false'
+      - '-Denable-installed-tests=false'
       - '-Dsoup2=false'
     sources:
       - type: archive
