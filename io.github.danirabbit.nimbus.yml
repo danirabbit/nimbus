@@ -9,32 +9,8 @@ finish-args:
   - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
-  - '--system-talk-name=org.freedesktop.GeoClue2'
 
 modules:
-  # Required for geoclue
-  - name: libsoup-2.4
-    buildsystem: meson
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libsoup/2.74/libsoup-2.74.3.tar.xz
-        sha256: e4b77c41cfc4c8c5a035fcdc320c7bc6cfb75ef7c5a034153df1413fa1d92f13
-  - name: geoclue
-    buildsystem: meson
-    config-opts:
-      - '-Dgtk-doc=false'
-      - '-D3g-source=false'
-      - '-Dcdma-source=false'
-      - '-Dmodem-gps-source=false'
-      - '-Dnmea-source=false'
-    sources:
-      - type: archive
-        # geoclue seems to be libportal-aware since 2.6.0, but libportal regards location service as disabled if
-        # 'org.gnome.system.location enabled' is set to 'false', and there is no GUI way to change this key on Pantheon.
-        # Getting and showing the current location won't work as a result.
-        # So we're stucked at this version until Pantheon provides changing this key.
-        url: https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.5.7/geoclue-2.5.7.tar.bz2
-        sha256: 6cc7dbe4177b4e7f3532f7fe42262049789a3cd6c55afe60a3564d7394119c27
   - name: geocode-glib-2.0
     buildsystem: meson
     config-opts:
@@ -45,6 +21,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
         sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
+
   - name: gweather
     config-opts:
       - '-Dgtk_doc=false'
