@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 17:41-0700\n"
+"POT-Creation-Date: 2023-04-26 09:17-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,26 +56,46 @@ msgid "Danielle Foré"
 msgstr ""
 
 #: data/nimbus.metainfo.xml.in:55
-msgid "Odin Updates!"
+msgid "Updated for OS 7!"
 msgstr ""
 
 #: data/nimbus.metainfo.xml.in:57
-msgid "Add Danish and Dutch and update French and Japanese Translations"
+msgid "New animated rain effect 🌧️"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:58 data/nimbus.metainfo.xml.in:69
-msgid "Bug fixes and stability improvements"
+#: data/nimbus.metainfo.xml.in:58
+msgid "Redesigned app icon"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:65
-msgid "Juno Updates!"
+#: data/nimbus.metainfo.xml.in:59
+msgid "Added Portuguese translation, thanks to @rottenpants466"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:60
+msgid "Updated to the latest platform libraries, thanks to Ryo Nakano"
 msgstr ""
 
 #: data/nimbus.metainfo.xml.in:67
+msgid "Odin Updates!"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:69
+msgid "Add Danish and Dutch and update French and Japanese Translations"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:70 data/nimbus.metainfo.xml.in:81
+msgid "Bug fixes and stability improvements"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:77
+msgid "Juno Updates!"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:79
 msgid "Add Catalan, French, German, and Japanese Translations"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:68
+#: data/nimbus.metainfo.xml.in:80
 msgid "HiDPI icons support"
 msgstr ""
 

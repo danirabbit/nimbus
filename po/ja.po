@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 17:40-0700\n"
+"POT-Creation-Date: 2023-04-26 09:17-0700\n"
 "PO-Revision-Date: 2018-10-15 23:33+0900\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <>\n"
@@ -17,15 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/MainWindow.vala:53
+#: src/MainWindow.vala:55
 msgid "Unable to Get Location"
 msgstr "現在地を取得できません"
 
-#: src/MainWindow.vala:72
+#: src/MainWindow.vala:57
+msgid ""
+"Make sure location access is turned on in <a href='settings://privacy/"
+"location'>System Settings → Security &amp; Privacy</a>"
+msgstr ""
+
+#: src/MainWindow.vala:77
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: src/MainWindow.vala:90
+#: src/MainWindow.vala:105
 #, c-format
 msgid "%i°"
 msgstr "%i°"
