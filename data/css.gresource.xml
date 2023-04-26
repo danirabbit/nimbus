@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/io/github/danirabbit/nimbus">
     <file compressed="true">Application.css</file>
+    <file compressed="true" preprocess="xml-stripblanks">rain.svg</file>
   </gresource>
 </gresources>
