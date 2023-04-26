@@ -4,10 +4,6 @@
  */
 
 public class MainWindow : Gtk.ApplicationWindow {
-    private const string COLOR_PRIMARY = """
-        @define-color colorPrimary %s;
-    """;
-
     private Gtk.Stack stack;
     private GWeather.Location location;
     private GWeather.Info weather_info;
@@ -93,35 +89,20 @@ public class MainWindow : Gtk.ApplicationWindow {
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = _("%i°").printf ((int) temp);
 
-            string color_primary;
-
             switch (weather_icon.icon_name) {
                 case "weather-clear-night-symbolic":
                 case "weather-few-clouds-night-symbolic":
-                    color_primary = "#183048";
+                    css_classes = {"night", "background", "csd"};
                     break;
                 case "weather-few-clouds-symbolic":
                 case "weather-overcast-symbolic":
                 case "weather-showers-symbolic":
                 case "weather-showers-scattered-symbolic":
-                    color_primary = "#68758e";
-                    break;
-                case "weather-snow-symbolic":
-                    color_primary = "#6fc3ff";
+                    css_classes = {"showers", "background", "csd"};
                     break;
                 default:
-                    color_primary = "@BLUEBERRY_500";
+                    css_classes = {"day", "background", "csd"};
                     break;
-            }
-
-            var provider = new Gtk.CssProvider ();
-            try {
-                var colored_css = COLOR_PRIMARY.printf (color_primary);
-                provider.load_from_data (colored_css.data);
-
-                Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (GLib.Error e) {
-                critical (e.message);
             }
         });
     }

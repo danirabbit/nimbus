@@ -17,26 +17,10 @@
 * Boston, MA 02110-1301 USA
 */
 
-@define-color colorPrimary @BLUEBERRY_500;
-
 window {
     padding: 2em;
-    background-color: @colorPrimary;
-    background-image:
-        linear-gradient(
-            to bottom,
-            alpha(white, 0),
-            alpha(white, 0.3)
-        );
-    color: #fff;
     font-weight: 500;
-    text-shadow:
-        0 1px 0 shade(@colorPrimary, 0.6),
-        0 2px 4px shade(@colorPrimary, 0.85);
-    transition: background 600ms ease-in-out;
-    -gtk-icon-shadow:
-        0 1px 0 shade(@colorPrimary, 0.6),
-        0 2px 4px shade(@colorPrimary, 0.85);
+    transition: all 600ms ease-in-out;
 }
 
 .title-3 {
@@ -46,4 +30,71 @@ window {
 .title-1 {
     font-size: 3em;
     font-weight: 800;
+}
+
+.day {
+    background-color: @BLUEBERRY_500;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.3)
+        );
+    color: #fff;
+    text-shadow:
+        0 2px 4px alpha(@BLUEBERRY_700, 0.5),
+        0 1px 0 alpha(@BLUEBERRY_700, 0.7);
+    -gtk-icon-shadow:
+        0 2px 4px alpha(@BLUEBERRY_700, 0.5),
+        0 1px 0 alpha(@BLUEBERRY_700, 0.7);
+}
+
+.night {
+    background-color: #183048;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.2)
+        );
+    color: #fff;
+    text-shadow:
+        0 2px 4px alpha(black, 0.2),
+        0 1px 0 alpha(black, 0.4);
+    -gtk-icon-shadow:
+        0 2px 4px alpha(black, 0.2),
+        0 1px 0 alpha(black, 0.4);
+}
+
+.showers {
+    background-color: #68758e;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.2)
+        ),
+        url("resource:///io/github/danirabbit/nimbus/rain.svg");
+	background-repeat: no-repeat, repeat;
+    color: #fff;
+    text-shadow:
+        0 2px 4px alpha(black, 0.2),
+        0 1px 0 alpha(black, 0.4);
+    -gtk-icon-shadow:
+        0 2px 4px alpha(black, 0.2),
+        0 1px 0 alpha(black, 0.4);
+    animation: rain 3s linear infinite;
+}
+
+@keyframes rain {
+    0% {
+       background-position:
+           0 0,
+           0 0;
+    }
+    100% {
+       background-position:
+           0 0,
+           400px 512px;
+    }
 }
