@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 16:12-0700\n"
+"POT-Creation-Date: 2023-04-25 17:38-0700\n"
 "PO-Revision-Date: 2017-04-30 16:27-0700\n"
 "Last-Translator: Daniel Fore <daniel@elementary.io>\n"
 "Language-Team: Spanish\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/MainWindow.vala:39
-msgid "Nimbus"
-msgstr "Nimbus"
-
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:53
 msgid "Unable to Get Location"
 msgstr "No fue posible encontrar tu ubicación"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:72
+msgid "Nimbus"
+msgstr "Nimbus"
+
+#: src/MainWindow.vala:90
 #, c-format
 msgid "%i°"
 msgstr "%i°"
