@@ -22,7 +22,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/danirabbit/nimbus/main/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/danirabbit/nimbus/1.0.0/data/screenshot.png</image>
     </screenshot>
   </screenshots>
 
@@ -50,6 +50,18 @@
   <update_contact>danielle@elementary.io</update_contact>
 
   <releases>
+    <release version="1.0.0" date="2023-04-25" urgency="medium">
+      <description>
+        <p>Updated for OS 7!</p>
+        <ul>
+          <li>New animated rain effect 🌧️</li>
+          <li>Redesigned app icon</li>
+          <li>Added Portuguese translation, thanks to @rottenpants466</li>
+          <li>Updated to the latest platform libraries, thanks to Ryo Nakano</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.3.3" date="2021-05-14" urgency="medium">
       <description>
         <p>Odin Updates!</p>
