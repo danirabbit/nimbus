@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.danrabbit.nimbus package.
+# This file is distributed under the same license as the io.github.danirabbit.nimbus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.danrabbit.nimbus\n"
+"Project-Id-Version: io.github.danirabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 16:12-0700\n"
+"POT-Creation-Date: 2023-04-25 17:40-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:39
-msgid "Nimbus"
-msgstr ""
-
-#: src/MainWindow.vala:88
+#: src/MainWindow.vala:53
 msgid "Unable to Get Location"
 msgstr ""
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:72
+msgid "Nimbus"
+msgstr ""
+
+#: src/MainWindow.vala:90
 #, c-format
 msgid "%i°"
 msgstr ""
