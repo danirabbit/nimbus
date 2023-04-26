@@ -50,7 +50,7 @@
   <update_contact>danielle@elementary.io</update_contact>
 
   <releases>
-    <release version="1.0.0" date="2023-04-25" urgency="medium">
+    <release version="1.0.0" date="2023-04-26" urgency="medium">
       <description>
         <p>Updated for OS 7!</p>
         <ul>
@@ -58,6 +58,7 @@
           <li>Redesigned app icon</li>
           <li>Added Portuguese translation, thanks to @rottenpants466</li>
           <li>Updated to the latest platform libraries, thanks to Ryo Nakano</li>
+          <li>Better error handling and messaging</li>
         </ul>
       </description>
     </release>
