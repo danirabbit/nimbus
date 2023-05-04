@@ -1,0 +1,113 @@
+{
+  "id" : "io.github.danirabbit.nimbus",
+  "runtime" : "io.elementary.Platform",
+  "runtime-version" : "7.2",
+  "sdk" : "io.elementary.Sdk",
+  "command" : "io.github.danirabbit.nimbus",
+  "modules" : [
+    {
+      "name" : "libsoup-2.4",
+      "buildsystem" : "meson",
+      "sources" : [
+        {
+          "url" : "https://download.gnome.org/sources/libsoup/2.74/libsoup-2.74.3.tar.xz",
+          "sha256" : "e4b77c41cfc4c8c5a035fcdc320c7bc6cfb75ef7c5a034153df1413fa1d92f13",
+          "type" : "archive",
+          "x-checker-data": {
+            "type": "gnome",
+            "name": "libsoup",
+            "versions": {
+                "<": "2.99",
+                ">=": "2.74"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name" : "geoclue",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "-Dgtk-doc=false",
+        "-D3g-source=false",
+        "-Dcdma-source=false",
+        "-Dmodem-gps-source=false",
+        "-Dnmea-source=false"
+      ],
+      "sources" : [
+        {
+          "url" : "https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.5.7/geoclue-2.5.7.tar.bz2",
+          "sha256" : "6cc7dbe4177b4e7f3532f7fe42262049789a3cd6c55afe60a3564d7394119c27",
+          "type" : "archive",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://gitlab.freedesktop.org/api/v4/projects/geoclue%2Fgeoclue/repository/tags",
+            "version-query": ".[0].name",
+            "url-query": "\"https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/\\($version)/geoclue-\\($version).tar.bz2\""
+          }
+        }
+      ]
+    },
+    {
+      "name" : "geocode-glib-2.0",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "-Denable-gtk-doc=false",
+        "-Denable-installed-tests=false",
+        "-Dsoup2=false"
+      ],
+      "sources" : [
+        {
+          "url" : "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz",
+          "sha256" : "2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa",
+          "type" : "archive",
+          "x-checker-data": {
+            "type": "gnome",
+            "name": "geocode-glib"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "gweather",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "-Dgtk_doc=false",
+        "-Dtests=false"
+      ],
+      "sources" : [
+        {
+          "url" : "https://download.gnome.org/sources/libgweather/4.2/libgweather-4.2.0.tar.xz",
+          "sha256" : "af8a812da0d8976a000e1d62572c256086a817323fbf35b066dbfdd8d2ca6203",
+          "type" : "archive",
+          "x-checker-data": {
+            "type": "gnome",
+            "name": "libgweather",
+            "versions": {
+                "<": "40.0",
+                ">=": "4.0.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name" : "nimbus",
+      "buildsystem" : "meson",
+      "sources" : [
+        {
+          "path" : ".",
+          "type" : "dir"
+        }
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--device=dri",
+    "--share=ipc",
+    "--share=network",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--system-talk-name=org.freedesktop.GeoClue2"
+  ]
+}
