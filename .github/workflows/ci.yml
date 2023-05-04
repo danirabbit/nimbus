@@ -38,7 +38,7 @@ jobs:
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: Nimbus.flatpak
-          manifest-path: io.github.danirabbit.nimbus.yml
+          manifest-path: io.github.danirabbit.nimbus.json
           run-tests: true
           repository-name: appcenter
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
