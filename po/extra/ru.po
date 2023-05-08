@@ -79,7 +79,7 @@ msgstr ""
 
 #: data/nimbus.metainfo.xml.in:61
 msgid "Better error handling and messaging"
-msgstr ""
+msgstr "Улучшена обработка ошибок и формулировки сообщений"
 
 #: data/nimbus.metainfo.xml.in:68
 msgid "Odin Updates!"
