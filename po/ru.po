@@ -24,7 +24,9 @@ msgstr "Не удалось получить местоположение"
 msgid ""
 "Make sure location access is turned on in <a href='settings://privacy/"
 "location'>System Settings → Security &amp; Privacy</a>"
-msgstr "Проверьте, что сервисы местоположения включены в <a href='settings://privacy/location'>Параметры системы → Защита и приватность</a>"
+msgstr ""
+"Проверьте, что сервисы местоположения включены в <a href='settings://privacy/"
+"location'>Параметры системы → Защита и приватность</a>"
 
 #: src/MainWindow.vala:77
 msgid "Nimbus"
