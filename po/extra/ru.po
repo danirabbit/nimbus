@@ -1,0 +1,112 @@
+# Russian translations for com.github.danrabbit.nimbus package.
+# Copyright (C) 2023 THE Danielle Foré
+# This file is distributed under the same license as the extra package.
+# lenemter <lenemter@gnail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-09 00:21+0900\n"
+"PO-Revision-Date: 2023-05-08 23:52+0900\n"
+"Last-Translator: lenemter <lenemter@gnail.com>\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/nimbus.metainfo.xml.in:10 data/nimbus.desktop.in:3
+msgid "Nimbus"
+msgstr "Nimbus"
+
+#: data/nimbus.metainfo.xml.in:11 data/nimbus.desktop.in:4
+msgid "See outside without going there"
+msgstr "Смотрите, что происходит снаружи, не выходя туда"
+
+#: data/nimbus.metainfo.xml.in:13
+msgid ""
+"See the current temperature and weather conditions for your location with "
+"this minimal color-changing applet."
+msgstr ""
+"Получайте текущую температуру и погоду для вашего местоположения с помощью "
+"этого минималистичного апплета, меняющего цвет."
+
+#: data/nimbus.metainfo.xml.in:15
+msgid "Click anywhere to fetch the latest weather"
+msgstr "Нажмите в любом месте, чтобы получить последнюю информацию о погоде"
+
+#: data/nimbus.metainfo.xml.in:16
+msgid "Stays out of your way by always sticking to the desktop"
+msgstr "Не мешается у вас на пути, всегда придерживаясь рабочего стола"
+
+#: data/nimbus.metainfo.xml.in:17
+msgid "Move the window by dragging any part of it"
+msgstr "Перемещайте окно за любую его часть"
+
+#: data/nimbus.metainfo.xml.in:18
+msgid "Quit with the handy shortcut Ctrl + Q"
+msgstr "Закрывайте с помощью удобного сочетания Ctrl + Q"
+
+#: data/nimbus.metainfo.xml.in:19
+msgid "Respects your system settings for temperature units"
+msgstr "Следует вашим системным настройкам единиц температуры"
+
+#: data/nimbus.metainfo.xml.in:49
+msgid "Danielle Foré"
+msgstr "Danielle Foré"
+
+#: data/nimbus.metainfo.xml.in:55
+msgid "Updated for OS 7!"
+msgstr "Обновление для OS 7!"
+
+#: data/nimbus.metainfo.xml.in:57
+msgid "New animated rain effect 🌧️"
+msgstr "Новый анимированный эффект дождя 🌧️"
+
+#: data/nimbus.metainfo.xml.in:58
+msgid "Redesigned app icon"
+msgstr "Редизайн иконки приложения"
+
+#: data/nimbus.metainfo.xml.in:59
+msgid "Added Portuguese translation, thanks to @rottenpants466"
+msgstr "Добавлен португальский перевод, спасибо @rottenpants466"
+
+#: data/nimbus.metainfo.xml.in:60
+msgid "Updated to the latest platform libraries, thanks to Ryo Nakano"
+msgstr ""
+"Библиотеки платформы были обновлены до последних версий, спасибо Ryo Nakano"
+
+#: data/nimbus.metainfo.xml.in:61
+msgid "Better error handling and messaging"
+msgstr "Улучшена обработка ошибок и формулировки сообщений"
+
+#: data/nimbus.metainfo.xml.in:68
+msgid "Odin Updates!"
+msgstr "Обновления для Odin!"
+
+#: data/nimbus.metainfo.xml.in:70
+msgid "Add Danish and Dutch and update French and Japanese Translations"
+msgstr ""
+"Добавлены датский и голландский переводы, и обновлены французский и японский "
+"переводы"
+
+#: data/nimbus.metainfo.xml.in:71 data/nimbus.metainfo.xml.in:82
+msgid "Bug fixes and stability improvements"
+msgstr "Исправления ошибок и улучшения стабильности"
+
+#: data/nimbus.metainfo.xml.in:78
+msgid "Juno Updates!"
+msgstr "Обновления для Juno!"
+
+#: data/nimbus.metainfo.xml.in:80
+msgid "Add Catalan, French, German, and Japanese Translations"
+msgstr "Добавлены каталонский, французский, немецкий и японский переводы"
+
+#: data/nimbus.metainfo.xml.in:81
+msgid "HiDPI icons support"
+msgstr "Поддержка HiDPI иконок"
+
+#: data/nimbus.desktop.in:7
+msgid "weather;temperature;"
+msgstr "weather;temperature;погода;температура;"

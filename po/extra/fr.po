@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-26 09:17-0700\n"
+"POT-Creation-Date: 2023-05-09 00:21+0900\n"
 "PO-Revision-Date: 2019-03-04 13:20+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -79,27 +79,31 @@ msgstr ""
 msgid "Updated to the latest platform libraries, thanks to Ryo Nakano"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:67
+#: data/nimbus.metainfo.xml.in:61
+msgid "Better error handling and messaging"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:68
 msgid "Odin Updates!"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:69
+#: data/nimbus.metainfo.xml.in:70
 msgid "Add Danish and Dutch and update French and Japanese Translations"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:70 data/nimbus.metainfo.xml.in:81
+#: data/nimbus.metainfo.xml.in:71 data/nimbus.metainfo.xml.in:82
 msgid "Bug fixes and stability improvements"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:77
+#: data/nimbus.metainfo.xml.in:78
 msgid "Juno Updates!"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:79
+#: data/nimbus.metainfo.xml.in:80
 msgid "Add Catalan, French, German, and Japanese Translations"
 msgstr ""
 
-#: data/nimbus.metainfo.xml.in:80
+#: data/nimbus.metainfo.xml.in:81
 msgid "HiDPI icons support"
 msgstr ""
 
