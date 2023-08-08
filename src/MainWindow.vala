@@ -16,9 +16,8 @@ public class MainWindow : Gtk.ApplicationWindow {
             contact_info = "danielle@elementary.io"
         };
 
-        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name ()) {
-            pixel_size = 48
-        };
+        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name ());
+        weather_icon.add_css_class ("weather-icon");
 
         var weather_label = new Gtk.Label (weather_info.get_sky ()) {
             halign = Gtk.Align.END,
@@ -38,6 +37,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         };
 
         var wind_icon = new Gtk.Image.from_icon_name ("weather-windy-symbolic") {
+            halign = END,
             tooltip_text = _("Wind")
         };
 
@@ -46,6 +46,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         };
 
         var visibility_icon = new Gtk.Image.from_icon_name ("eye-open-negative-filled-symbolic") {
+            halign = END,
             tooltip_text = _("Visibility")
         };
 
@@ -54,6 +55,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         };
 
         var pressure_icon = new Gtk.Image.from_icon_name ("pressure-symbolic") {
+            halign = END,
             tooltip_text = _("Pressure")
         };
 
@@ -61,26 +63,18 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = START
         };
 
-        var details_grid = new Gtk.Grid () {
-            column_spacing = 6,
-            row_spacing = 6,
-            margin_top = 12
-        };
-        details_grid.attach (wind_icon, 0, 0);
-        details_grid.attach (wind_label, 1, 0);
-        details_grid.attach (visibility_icon, 0, 1);
-        details_grid.attach (visibility_label, 1, 1);
-        details_grid.attach (pressure_icon, 0, 2);
-        details_grid.attach (pressure_label, 1, 2);
-
-        grid = new Gtk.Grid () {
-            column_spacing = 12
-        };
+        grid = new Gtk.Grid ();
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
-        grid.attach (details_grid, 1, 2, 2);
         grid.attach (weather_label, 2, 0);
         grid.attach (location_label, 2, 1);
+
+        grid.attach (wind_icon, 0, 2);
+        grid.attach (wind_label, 1, 2, 2);
+        grid.attach (visibility_icon, 0, 3);
+        grid.attach (visibility_label, 1, 3, 2);
+        grid.attach (pressure_icon, 0, 4);
+        grid.attach (pressure_label, 1, 4, 2);
         grid.add_css_class ("weather");
 
         spinner = new Gtk.Spinner () {
