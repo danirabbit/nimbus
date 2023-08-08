@@ -31,7 +31,6 @@ image.weather-icon {
 
 image:not(.weather-icon) {
     min-height: 2em;
-
 }
 
 image:not(.weather-icon):dir(ltr) {
