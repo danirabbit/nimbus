@@ -141,9 +141,9 @@ public class MainWindow : Gtk.ApplicationWindow {
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = _("%i°").printf ((int) temp);
 
-            visibility_label.label = weather_info.get_visibility ();
-            pressure_label.label = weather_info.get_pressure ();
-            wind_label.label = weather_info.get_wind ();
+            visibility_label.label = dgettext ("libgweather", weather_info.get_visibility ());
+            pressure_label.label = dgettext ("libgweather", weather_info.get_pressure ());
+            wind_label.label = dgettext ("libgweather", weather_info.get_wind ());
 
             switch (weather_icon.icon_name) {
                 case "weather-clear-night-symbolic":
