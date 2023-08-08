@@ -25,6 +25,22 @@ window spinner {
     margin: 2em;
 }
 
+image.weather-icon {
+    -gtk-icon-size: 5.333em; /* 48px */
+}
+
+image:not(.weather-icon) {
+    min-height: 2em;
+}
+
+image:not(.weather-icon):dir(ltr) {
+    margin-right: 1em;
+}
+
+image:not(.weather-icon):dir(rtl) {
+    margin-left: 1em;
+}
+
 .weather {
     padding: 2em;
     font-weight: 500;

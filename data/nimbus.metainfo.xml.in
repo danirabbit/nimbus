@@ -50,6 +50,17 @@
   <update_contact>danielle@elementary.io</update_contact>
 
   <releases>
+    <release version="1.1.0" date="2023-08-07" urgency="medium">
+      <description>
+        <p>Now with more info!</p>
+        <ul>
+          <li>See Wind, Visiblity, and Pressure thanks to @alexkdeveloper</li>
+          <li>Get location in a privacy-respecting way</li>
+          <li>Russian translation, thanks to @lenemter</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="1.0.0" date="2023-04-26" urgency="medium">
       <description>
         <p>Updated for OS 7!</p>
