@@ -38,7 +38,7 @@ msgstr ""
 
 #: src/MainWindow.vala:130
 #, c-format
-msgid "Visibility: %i m"
+msgid "Visibility: %i km"
 msgstr ""
 
 #: src/MainWindow.vala:134
