@@ -37,32 +37,48 @@ public class MainWindow : Gtk.ApplicationWindow {
             valign = Gtk.Align.START
         };
 
-        var wind_label = new Gtk.Label (weather_info.get_wind ()) {
-            halign = Gtk.Align.START
+        var wind_icon = new Gtk.Image.from_icon_name ("weather-windy-symbolic") {
+            tooltip_text = _("Wind")
         };
-        wind_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var wind_label = new Gtk.Label (weather_info.get_wind ()) {
+            halign = START
+        };
+
+        var visibility_icon = new Gtk.Image.from_icon_name ("eye-open-negative-filled-symbolic") {
+            tooltip_text = _("Visibility")
+        };
 
         var visibility_label = new Gtk.Label (weather_info.get_visibility()) {
-            halign = Gtk.Align.START
+            halign = START
         };
-        visibility_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var pressure_icon = new Gtk.Image.from_icon_name ("pressure-symbolic") {
+            tooltip_text = _("Pressure")
+        };
 
         var pressure_label = new Gtk.Label (weather_info.get_pressure()) {
-            halign = Gtk.Align.START
+            halign = START
         };
-        pressure_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        var vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        vbox.append (wind_label);
-        vbox.append (visibility_label);
-        vbox.append (pressure_label);
+        var details_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            row_spacing = 6,
+            margin_top = 12
+        };
+        details_grid.attach (wind_icon, 0, 0);
+        details_grid.attach (wind_label, 1, 0);
+        details_grid.attach (visibility_icon, 0, 1);
+        details_grid.attach (visibility_label, 1, 1);
+        details_grid.attach (pressure_icon, 0, 2);
+        details_grid.attach (pressure_label, 1, 2);
 
         grid = new Gtk.Grid () {
             column_spacing = 12
         };
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
-        grid.attach (vbox, 1, 2, 1, 2);
+        grid.attach (details_grid, 1, 2, 2);
         grid.attach (weather_label, 2, 0);
         grid.attach (location_label, 2, 1);
         grid.add_css_class ("weather");
@@ -125,18 +141,9 @@ public class MainWindow : Gtk.ApplicationWindow {
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = _("%i°").printf ((int) temp);
 
-            double visibility;
-            weather_info.get_value_visibility (GWeather.DistanceUnit.KM, out visibility);
-            visibility_label.label = _("Visibility: %i km").printf ((int) visibility);
-
-            double pressure;
-            weather_info.get_value_pressure (GWeather.PressureUnit.MM_HG, out pressure);
-            pressure_label.label = _("Pressure: %i mmHg").printf ((int) pressure);
-
-            double speed;
-            GWeather.WindDirection direction;
-            weather_info.get_value_wind (GWeather.SpeedUnit.MS, out speed, out direction);
-            wind_label.label = _("Wind: %s,  %i m/s").printf (direction.to_string(), (int) speed);
+            visibility_label.label = weather_info.get_visibility ();
+            pressure_label.label = weather_info.get_pressure ();
+            wind_label.label = weather_info.get_wind ();
 
             switch (weather_icon.icon_name) {
                 case "weather-clear-night-symbolic":

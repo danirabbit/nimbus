@@ -4,4 +4,7 @@
     <file compressed="true">Application.css</file>
     <file compressed="true" preprocess="xml-stripblanks">rain.svg</file>
   </gresource>
+  <gresource prefix="/io/github/danirabbit/nimbus/icons">
+    <file alias="scalable/status/pressure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/pressure-symbolic.svg</file>
+  </gresource>
 </gresources>
