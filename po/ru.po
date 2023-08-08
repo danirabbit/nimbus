@@ -40,8 +40,8 @@ msgstr "%i°"
 
 #: src/MainWindow.vala:130
 #, c-format
-msgid "Visibility: %i m"
-msgstr "Видимость: %i м"
+msgid "Visibility: %i km"
+msgstr "Видимость: %i км"
 
 #: src/MainWindow.vala:134
 #, c-format
