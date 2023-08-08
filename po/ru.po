@@ -38,17 +38,17 @@ msgstr "Nimbus"
 msgid "%i°"
 msgstr "%i°"
 
-#: src/MainWindow.vala:137
+#: src/MainWindow.vala:130
 #, c-format
 msgid "Visibility: %i m"
 msgstr "Видимость: %i м"
 
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:134
 #, c-format
 msgid "Pressure: %i mmHg"
 msgstr "Давление: %i мм рт.ст."
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:139
 #, c-format
 msgid "Wind: %s,  %i m/s"
 msgstr "Ветер: %s,  %i м/с"
