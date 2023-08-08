@@ -35,3 +35,18 @@ msgstr ""
 #, c-format
 msgid "%i°"
 msgstr ""
+
+#: src/MainWindow.vala:130
+#, c-format
+msgid "Visibility: %i km"
+msgstr ""
+
+#: src/MainWindow.vala:134
+#, c-format
+msgid "Pressure: %i mmHg"
+msgstr ""
+
+#: src/MainWindow.vala:139
+#, c-format
+msgid "Wind: %s,  %i m/s"
+msgstr ""

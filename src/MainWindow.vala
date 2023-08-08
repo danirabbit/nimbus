@@ -37,11 +37,32 @@ public class MainWindow : Gtk.ApplicationWindow {
             valign = Gtk.Align.START
         };
 
+        var wind_label = new Gtk.Label (weather_info.get_wind ()) {
+            halign = Gtk.Align.START
+        };
+        wind_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var visibility_label = new Gtk.Label (weather_info.get_visibility()) {
+            halign = Gtk.Align.START
+        };
+        visibility_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var pressure_label = new Gtk.Label (weather_info.get_pressure()) {
+            halign = Gtk.Align.START
+        };
+        pressure_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        vbox.append (wind_label);
+        vbox.append (visibility_label);
+        vbox.append (pressure_label);
+
         grid = new Gtk.Grid () {
             column_spacing = 12
         };
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
+        grid.attach (vbox, 1, 2, 1, 2);
         grid.attach (weather_label, 2, 0);
         grid.attach (location_label, 2, 1);
         grid.add_css_class ("weather");
@@ -103,6 +124,19 @@ public class MainWindow : Gtk.ApplicationWindow {
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
             temp_label.label = _("%i°").printf ((int) temp);
+
+            double visibility;
+            weather_info.get_value_visibility (GWeather.DistanceUnit.KM, out visibility);
+            visibility_label.label = _("Visibility: %i km").printf ((int) visibility);
+
+            double pressure;
+            weather_info.get_value_pressure (GWeather.PressureUnit.MM_HG, out pressure);
+            pressure_label.label = _("Pressure: %i mmHg").printf ((int) pressure);
+
+            double speed;
+            GWeather.WindDirection direction;
+            weather_info.get_value_wind (GWeather.SpeedUnit.MS, out speed, out direction);
+            wind_label.label = _("Wind: %s,  %i m/s").printf (direction.to_string(), (int) speed);
 
             switch (weather_icon.icon_name) {
                 case "weather-clear-night-symbolic":
