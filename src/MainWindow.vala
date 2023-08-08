@@ -126,8 +126,8 @@ public class MainWindow : Gtk.ApplicationWindow {
             temp_label.label = _("%i°").printf ((int) temp);
 
             double visibility;
-            weather_info.get_value_visibility (GWeather.DistanceUnit.METERS, out visibility);
-            visibility_label.label = _("Visibility: %i m").printf ((int) visibility);
+            weather_info.get_value_visibility (GWeather.DistanceUnit.KM, out visibility);
+            visibility_label.label = _("Visibility: %i km").printf ((int) visibility);
 
             double pressure;
             weather_info.get_value_pressure (GWeather.PressureUnit.MM_HG, out pressure);
