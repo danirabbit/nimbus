@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-26 09:17-0700\n"
+"POT-Creation-Date: 2023-08-08 15:22-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:55
+#: src/MainWindow.vala:41
+msgid "Wind"
+msgstr ""
+
+#: src/MainWindow.vala:50
+msgid "Visibility"
+msgstr ""
+
+#: src/MainWindow.vala:59
+msgid "Pressure"
+msgstr ""
+
+#: src/MainWindow.vala:86
 msgid "Unable to Get Location"
 msgstr ""
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:88
 msgid ""
 "Make sure location access is turned on in <a href='settings://privacy/"
 "location'>System Settings → Security &amp; Privacy</a>"
 msgstr ""
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:108
 msgid "Nimbus"
 msgstr ""
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:136
 #, c-format
 msgid "%i°"
-msgstr ""
-
-#: src/MainWindow.vala:130
-#, c-format
-msgid "Visibility: %i km"
-msgstr ""
-
-#: src/MainWindow.vala:134
-#, c-format
-msgid "Pressure: %i mmHg"
-msgstr ""
-
-#: src/MainWindow.vala:139
-#, c-format
-msgid "Wind: %s,  %i m/s"
 msgstr ""

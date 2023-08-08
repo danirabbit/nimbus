@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-26 09:17-0700\n"
+"POT-Creation-Date: 2023-08-08 15:22-0700\n"
 "PO-Revision-Date: 2023-08-08 13:17+0800\n"
 "Last-Translator: lenemter <lenemter@gnail.com>\n"
 "Language-Team: none\n"
@@ -17,11 +17,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: src/MainWindow.vala:55
+#: src/MainWindow.vala:41
+msgid "Wind"
+msgstr ""
+
+#: src/MainWindow.vala:50
+#, fuzzy
+msgid "Visibility"
+msgstr "Видимость: %i км"
+
+#: src/MainWindow.vala:59
+#, fuzzy
+msgid "Pressure"
+msgstr "Давление: %i мм рт.ст."
+
+#: src/MainWindow.vala:86
 msgid "Unable to Get Location"
 msgstr "Не удалось получить местоположение"
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:88
 msgid ""
 "Make sure location access is turned on in <a href='settings://privacy/"
 "location'>System Settings → Security &amp; Privacy</a>"
@@ -29,26 +43,15 @@ msgstr ""
 "Проверьте, что сервисы местоположения включены в <a href='settings://privacy/"
 "location'>Параметры системы → Защита и приватность</a>"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:108
 msgid "Nimbus"
 msgstr "Nimbus"
 
-#: src/MainWindow.vala:105
+#: src/MainWindow.vala:136
 #, c-format
 msgid "%i°"
 msgstr "%i°"
 
-#: src/MainWindow.vala:130
 #, c-format
-msgid "Visibility: %i km"
-msgstr "Видимость: %i км"
-
-#: src/MainWindow.vala:134
-#, c-format
-msgid "Pressure: %i mmHg"
-msgstr "Давление: %i мм рт.ст."
-
-#: src/MainWindow.vala:139
-#, c-format
-msgid "Wind: %s,  %i m/s"
-msgstr "Ветер: %s,  %i м/с"
+#~ msgid "Wind: %s,  %i m/s"
+#~ msgstr "Ветер: %s,  %i м/с"
