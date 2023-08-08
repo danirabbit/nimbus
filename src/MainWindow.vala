@@ -50,7 +50,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             tooltip_text = _("Visibility")
         };
 
-        var visibility_label = new Gtk.Label (weather_info.get_visibility()) {
+        var visibility_label = new Gtk.Label (weather_info.get_visibility ()) {
             halign = START
         };
 
@@ -59,7 +59,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             tooltip_text = _("Pressure")
         };
 
-        var pressure_label = new Gtk.Label (weather_info.get_pressure()) {
+        var pressure_label = new Gtk.Label (weather_info.get_pressure ()) {
             halign = START
         };
 
