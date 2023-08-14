@@ -144,8 +144,8 @@ public class MainWindow : Gtk.ApplicationWindow {
                 case "weather-few-clouds-night-symbolic":
                     css_classes = {"night", "background", "csd"};
                     break;
-                case "weather-few-clouds-symbolic":
                 case "weather-overcast-symbolic":
+                    css_classes = {"cloudy", "background", "csd"};
                 case "weather-showers-symbolic":
                 case "weather-showers-scattered-symbolic":
                     css_classes = {"showers", "background", "csd"};
