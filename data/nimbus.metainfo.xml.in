@@ -10,10 +10,9 @@
   <name>Nimbus</name>
   <summary>See outside without going there</summary>
   <description>
-    <p>See the current temperature and weather conditions for your location with this minimal color-changing applet.</p>
+    <p>See the current temperature and weather conditions for your location with this minimal color-changing app.</p>
     <ul>
       <li>Click anywhere to fetch the latest weather</li>
-      <li>Stays out of your way by always sticking to the desktop</li>
       <li>Move the window by dragging any part of it</li>
       <li>Quit with the handy shortcut Ctrl + Q</li>
       <li>Respects your system settings for temperature units</li>
