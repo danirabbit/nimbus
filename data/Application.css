@@ -89,6 +89,23 @@ image:not(.weather-icon):dir(rtl) {
         0 1px 0 alpha(black, 0.4);
 }
 
+.cloudy {
+    background-color: @SILVER_700;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0),
+            alpha(white, 0.3)
+        );
+    color: #fff;
+    text-shadow:
+        0 2px 4px alpha(@SILVER_900, 0.5),
+        0 1px 0 alpha(@SILVER_900, 0.7);
+    -gtk-icon-shadow:
+        0 2px 4px alpha(@SILVER_900, 0.5),
+        0 1px 0 alpha(@SILVER_900, 0.7);
+}
+
 .showers {
     background-color: #68758e;
     background-image:
