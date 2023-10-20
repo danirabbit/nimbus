@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.danrabbit.nimbus package.
 #
-# ryonakano <ryonakaknock3@gmail.com>, 2018.
+# ryonakano <ryonakaknock3@gmail.com>, 2018, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.nimbus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-08 15:22-0700\n"
-"PO-Revision-Date: 2018-10-15 23:33+0900\n"
+"PO-Revision-Date: 2023-10-20 22:31+0900\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <>\n"
 "Language: ja\n"
@@ -15,19 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: src/MainWindow.vala:41
 msgid "Wind"
-msgstr ""
+msgstr "風"
 
 #: src/MainWindow.vala:50
 msgid "Visibility"
-msgstr ""
+msgstr "視程"
 
 #: src/MainWindow.vala:59
 msgid "Pressure"
-msgstr ""
+msgstr "気圧"
 
 #: src/MainWindow.vala:86
 msgid "Unable to Get Location"
@@ -38,6 +37,9 @@ msgid ""
 "Make sure location access is turned on in <a href='settings://privacy/"
 "location'>System Settings → Security &amp; Privacy</a>"
 msgstr ""
+"位置情報へのアクセスがオンになっているか、<a href='settings://privacy/"
+"location'>システム設定 → セキュリティーとプライバシー</a>で確認してく"
+"ださい"
 
 #: src/MainWindow.vala:108
 msgid "Nimbus"
