@@ -1,14 +1,14 @@
 # Japanese translations for extra package.
 # Copyright (C) 2018 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2018.
+# ryonakano <ryonakaknock3@gmail.com>, 2018, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 15:22-0700\n"
-"PO-Revision-Date: 2018-10-15 23:32+0900\n"
+"POT-Creation-Date: 2023-10-20 22:11+0900\n"
+"PO-Revision-Date: 2023-10-20 22:33+0900\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: data/nimbus.metainfo.xml.in:10 data/nimbus.desktop.in:3
 msgid "Nimbus"
@@ -29,38 +28,37 @@ msgstr "外に出ずに天気を確認しましょう"
 #: data/nimbus.metainfo.xml.in:13
 msgid ""
 "See the current temperature and weather conditions for your location with "
-"this minimal color-changing applet."
+"this minimal color-changing app."
 msgstr ""
-"現在地の今の気温と天気の状況を、色変わりするこの最小限のアプレットで確認しま"
+"現在地の今の気温と天気の状況を、色変わりするこの最小限のアプリで確認しま"
 "しょう。"
 
 #: data/nimbus.metainfo.xml.in:15
 msgid "Click anywhere to fetch the latest weather"
-msgstr "クリックすると最新の天気を取得します"
+msgstr "任意の箇所をクリックすると最新の天気を取得します"
 
 #: data/nimbus.metainfo.xml.in:16
-msgid "Stays out of your way by always sticking to the desktop"
-msgstr "常にデスクトップに表示されるので邪魔になりません"
-
-#: data/nimbus.metainfo.xml.in:17
 msgid "Move the window by dragging any part of it"
 msgstr "ウィンドウの好きな部分をドラッグするとウィンドウを移動できます"
 
-#: data/nimbus.metainfo.xml.in:18
+#: data/nimbus.metainfo.xml.in:17
 msgid "Quit with the handy shortcut Ctrl + Q"
 msgstr "便利なショートカット Ctrl + Q で終了します"
 
-#: data/nimbus.metainfo.xml.in:19
+#: data/nimbus.metainfo.xml.in:18
 msgid "Respects your system settings for temperature units"
-msgstr "お使いのシステムの温度の単位を使用します"
+msgstr "システムで設定された気温の単位を使用します"
 
-#: data/nimbus.metainfo.xml.in:49
-#, fuzzy
+#: data/nimbus.metainfo.xml.in:48
 msgid "Danielle Foré"
-msgstr "Daniel Foré"
+msgstr "Danielle Foré"
 
-#: data/nimbus.metainfo.xml.in:55
+#: data/nimbus.metainfo.xml.in:54
 msgid "Now with more info!"
+msgstr ""
+
+#: data/nimbus.metainfo.xml.in:56
+msgid "Gray and cold looking when it's cloudy out ☁️"
 msgstr ""
 
 #: data/nimbus.metainfo.xml.in:57
@@ -125,7 +123,4 @@ msgstr ""
 
 #: data/nimbus.desktop.in:7
 msgid "weather;temperature;"
-msgstr "weather;temperature;天気;気温;"
-
-#~ msgid "com.github.danrabbit.nimbus"
-#~ msgstr "com.github.danrabbit.nimbus"
+msgstr "weather;temperature;天気;気温;温度;"
