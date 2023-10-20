@@ -7,6 +7,15 @@ add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', languag
 gnome = import('gnome')
 i18n = import('i18n')
 
+config_data = configuration_data()
+config_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+config_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+config_file = configure_file(
+    input: 'src/Config.vala.in',
+    output: '@BASENAME@',
+    configuration: config_data
+)
+
 asresources = gnome.compile_resources(
     'as-resources', 'data/css.gresource.xml',
     source_dir: 'data',
@@ -17,6 +26,7 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/MainWindow.vala',
+    config_file,
     asresources,
     dependencies: [
         dependency('glib-2.0'),

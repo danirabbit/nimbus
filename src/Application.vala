@@ -12,6 +12,11 @@ public class Nimbus : Gtk.Application {
     }
 
     protected override void startup () {
+        Intl.setlocale (LocaleCategory.ALL, "");
+        Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+        Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        Intl.textdomain (GETTEXT_PACKAGE);
+
         var quit_action = new SimpleAction ("quit", null);
 
         add_action (quit_action);
