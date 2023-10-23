@@ -35,7 +35,6 @@ executable(
         dependency('gtk4'),
         dependency('granite-7'),
         dependency('gweather4'),
-        dependency('libadwaita-1'),
         dependency('libgeoclue-2.0')
     ],
     install : true

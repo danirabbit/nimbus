@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2017-2023 Danielle Foré (https://danirabbit.github.io/)
  */
 
-public class HourlyInfoChild : Gtk.Box {
+public class HourlyInfoChild : Gtk.FlowBoxChild {
     public GWeather.Info weather_info { get; construct; }
     public GWeather.Location location{ get; construct; }
 
@@ -34,10 +34,13 @@ public class HourlyInfoChild : Gtk.Box {
 
         var temp_label = new Gtk.Label (weather_info.get_temp ());
 
-        orientation = VERTICAL;
-        append (time_label);
-        append (image);
-        append (temp_label);
+        var box = new Gtk.Box (VERTICAL, 0);
+        box.append (time_label);
+        box.append (image);
+        box.append (temp_label);
+
+        focusable = false;
+        child = box;
     }
 
     private string get_conditions () {

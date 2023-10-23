@@ -68,7 +68,15 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = START
         };
 
-        var hourly_carousel = new Adw.Carousel ();
+        var hourly_box = new Gtk.FlowBox () {
+            min_children_per_line = 24,
+            max_children_per_line = 24
+        };
+
+        var hourly_scrolled = new Gtk.ScrolledWindow () {
+            child = hourly_box,
+            vscrollbar_policy = NEVER
+        };
 
         var grid = new Gtk.Grid ();
         grid.attach (weather_icon, 0, 0, 1, 2);
@@ -87,7 +95,7 @@ public class MainWindow : Gtk.ApplicationWindow {
 
         box = new Gtk.Box (VERTICAL, 0);
         box.append (grid);
-        box.append (hourly_carousel);
+        box.append (hourly_scrolled);
 
         spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER,
@@ -173,14 +181,14 @@ public class MainWindow : Gtk.ApplicationWindow {
                     break;
             }
 
-            while (hourly_carousel.get_n_pages () > 0) {
-                hourly_carousel.remove (hourly_carousel.get_nth_page (0));
+            while (hourly_box.get_first_child () != null) {
+                hourly_box.remove (hourly_box.get_first_child ());
             }
 
             unowned var forecast_list = weather_info.get_forecast_list ();
             foreach (unowned var info in forecast_list) {
-                hourly_carousel.append (new HourlyInfoChild (info, location));
-                if (hourly_carousel.n_pages > 24) {
+                hourly_box.append (new HourlyInfoChild (info, location));
+                if (hourly_box.get_child_at_index (23) != null) {
                     break;
                 }
             }
