@@ -6,7 +6,7 @@
 public class MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack stack;
     private Gtk.Spinner spinner;
-    private Gtk.Grid grid;
+    private Gtk.Box box;
     private Granite.Placeholder placeholder;
     private GWeather.Location? location = null;
     private GWeather.Info weather_info;
@@ -42,6 +42,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Wind")
         };
+        wind_icon.add_css_class ("conditions");
 
         var wind_label = new Gtk.Label ("") {
             halign = START
@@ -51,6 +52,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Visibility")
         };
+        visibility_icon.add_css_class ("conditions");
 
         var visibility_label = new Gtk.Label ("") {
             halign = START
@@ -60,12 +62,23 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Pressure")
         };
+        pressure_icon.add_css_class ("conditions");
 
         var pressure_label = new Gtk.Label ("") {
             halign = START
         };
 
-        grid = new Gtk.Grid ();
+        var hourly_box = new Gtk.FlowBox () {
+            min_children_per_line = 24,
+            max_children_per_line = 24
+        };
+
+        var hourly_scrolled = new Gtk.ScrolledWindow () {
+            child = hourly_box,
+            vscrollbar_policy = NEVER
+        };
+
+        var grid = new Gtk.Grid ();
         grid.attach (weather_icon, 0, 0, 1, 2);
         grid.attach (temp_label, 1, 0, 1, 2);
         grid.attach (weather_label, 2, 0);
@@ -77,7 +90,12 @@ public class MainWindow : Gtk.ApplicationWindow {
         grid.attach (visibility_label, 1, 3, 2);
         grid.attach (pressure_icon, 0, 4);
         grid.attach (pressure_label, 1, 4, 2);
+
         grid.add_css_class ("weather");
+
+        box = new Gtk.Box (VERTICAL, 0);
+        box.append (grid);
+        box.append (hourly_scrolled);
 
         spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER,
@@ -96,7 +114,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             vhomogeneous = false
         };
         stack.add_child (spinner);
-        stack.add_child (grid);
+        stack.add_child (box);
         stack.add_child (placeholder);
 
         var window_handle = new Gtk.WindowHandle () {
@@ -162,6 +180,18 @@ public class MainWindow : Gtk.ApplicationWindow {
                     css_classes = {"day", "background", "csd"};
                     break;
             }
+
+            while (hourly_box.get_first_child () != null) {
+                hourly_box.remove (hourly_box.get_first_child ());
+            }
+
+            unowned var forecast_list = weather_info.get_forecast_list ();
+            foreach (unowned var info in forecast_list) {
+                hourly_box.append (new HourlyInfoChild (info, location));
+                if (hourly_box.get_child_at_index (23) != null) {
+                    break;
+                }
+            }
         });
     }
 
@@ -198,7 +228,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         if (location != null) {
             weather_info.location = location;
             weather_info.update ();
-            stack.visible_child = grid;
+            stack.visible_child = box;
         }
     }
 }
