@@ -13,7 +13,9 @@ public class MainWindow : Gtk.ApplicationWindow {
 
     construct {
         weather_info = new GWeather.Info (location) {
-            contact_info = "danielle@elementary.io"
+            application_id = Application.get_default ().application_id,
+            contact_info = "danielle@elementary.io",
+            enabled_providers = METAR | MET_NO
         };
 
         var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name ());
