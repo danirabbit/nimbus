@@ -12,6 +12,8 @@ public class Nimbus : Gtk.Application {
     }
 
     protected override void startup () {
+        Granite.init ();
+
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -29,10 +31,6 @@ public class Nimbus : Gtk.Application {
 
     protected override void activate () {
         if (active_window == null) {
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/github/danirabbit/nimbus/Application.css");
-            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
             add_window (new MainWindow ());
         }
 
