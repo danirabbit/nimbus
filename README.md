@@ -9,7 +9,7 @@ See the current temperature and weather conditions for your location with this m
 
 You'll need the following dependencies to build:
 * libgeoclue-2-dev
-* libgranite-7-dev
+* libgranite-7-dev >= 7.3.0
 * libgtk-4-dev
 * libgweather-4-dev
 * meson
@@ -18,13 +18,14 @@ You'll need the following dependencies to build:
 You'll need the following dependencies to run:
 * geoclue-2.0
 
-Run `meson build` to configure the build environment and run `ninja test` to build
+Run `flatpak-builder` to configure the build environment, download dependencies, build, and install
 
-    meson build --prefix=/usr
-    cd build
-    ninja
+```bash
+flatpak-builder build io.github.danirabbit.nimbus.json --user --install --force-clean --install-deps-from=appcenter
+```
 
-To install, use `ninja install`, then execute with `io.github.danirabbit.nimbus`
+Then execute with
 
-    ninja install
-    io.github.danirabbit.nimbus
+```bash
+flatpak run io.github.danirabbit.nimbus
+```
