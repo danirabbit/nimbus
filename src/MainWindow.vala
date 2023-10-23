@@ -16,17 +16,17 @@ public class MainWindow : Gtk.ApplicationWindow {
             contact_info = "danielle@elementary.io"
         };
 
-        var weather_icon = new Gtk.Image.from_icon_name (weather_info.get_symbolic_icon_name ());
+        var weather_icon = new Gtk.Image ();
         weather_icon.add_css_class ("weather-icon");
 
-        var weather_label = new Gtk.Label (weather_info.get_sky ()) {
+        var weather_label = new Gtk.Label ("") {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END,
             hexpand = true
         };
         weather_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var temp_label = new Gtk.Label (weather_info.get_temp ()) {
+        var temp_label = new Gtk.Label ("") {
             halign = Gtk.Align.START
         };
         temp_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
@@ -41,7 +41,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             tooltip_text = _("Wind")
         };
 
-        var wind_label = new Gtk.Label (weather_info.get_wind ()) {
+        var wind_label = new Gtk.Label ("") {
             halign = START
         };
 
@@ -50,7 +50,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             tooltip_text = _("Visibility")
         };
 
-        var visibility_label = new Gtk.Label (weather_info.get_visibility ()) {
+        var visibility_label = new Gtk.Label ("") {
             halign = START
         };
 
@@ -59,7 +59,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             tooltip_text = _("Pressure")
         };
 
-        var pressure_label = new Gtk.Label (weather_info.get_pressure ()) {
+        var pressure_label = new Gtk.Label ("") {
             halign = START
         };
 
@@ -129,7 +129,13 @@ public class MainWindow : Gtk.ApplicationWindow {
             location_label.label = dgettext ("libgweather-locations", location.get_city_name ());
 
             weather_icon.icon_name = weather_info.get_symbolic_icon_name ();
-            weather_label.label = dgettext ("libgweather", weather_info.get_sky ());
+
+            var conditions = weather_info.get_conditions ();
+            if (conditions == "-") {
+                conditions = weather_info.get_sky ();
+            }
+
+            weather_label.label = dgettext ("libgweather", conditions);
 
             double temp;
             weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
