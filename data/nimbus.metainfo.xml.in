@@ -55,6 +55,7 @@
       <description>
         <p>More reliable and more accurate</p>
         <ul>
+          <li>Show window controls</li>
           <li>Get weather info from more providers</li>
           <li>More accurate description of the current weather, especially when it rains 🌧️</li>
           <li>Updated Japanese translation, thanks to @ryonokano</li>
