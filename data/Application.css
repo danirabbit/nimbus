@@ -18,11 +18,24 @@
 */
 
 window {
-    transition: all 600ms ease-in-out;
+    transition:
+        background 600ms ease-in-out,
+        color 600ms ease-in-out,
+        text-shadow 600ms ease-in-out,
+        -gtk-icon-shadow 600ms ease-in-out;
 }
 
 window spinner {
     margin: 2em;
+}
+
+headerbar {
+    background: transparent;
+}
+
+headerbar button {
+    color: inherit;
+    -gtk-icon-shadow: inherit;
 }
 
 image.weather-icon {
@@ -30,20 +43,20 @@ image.weather-icon {
     -gtk-icon-palette: warning @BANANA_500;
 }
 
-image:not(.weather-icon) {
+image.conditions {
     min-height: 2em;
 }
 
-image:not(.weather-icon):dir(ltr) {
+image.conditions:dir(ltr) {
     margin-right: 1em;
 }
 
-image:not(.weather-icon):dir(rtl) {
+image.conditions:dir(rtl) {
     margin-left: 1em;
 }
 
 .weather {
-    padding: 2em;
+    padding: 0 2em 2em;
     font-weight: 500;
 }
 

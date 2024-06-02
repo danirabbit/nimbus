@@ -42,6 +42,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Wind")
         };
+        wind_icon.add_css_class ("conditions");
 
         var wind_label = new Gtk.Label ("") {
             halign = START
@@ -51,6 +52,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Visibility")
         };
+        visibility_icon.add_css_class ("conditions");
 
         var visibility_label = new Gtk.Label ("") {
             halign = START
@@ -60,6 +62,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             halign = END,
             tooltip_text = _("Pressure")
         };
+        pressure_icon.add_css_class ("conditions");
 
         var pressure_label = new Gtk.Label ("") {
             halign = START
@@ -103,10 +106,16 @@ public class MainWindow : Gtk.ApplicationWindow {
             child = stack
         };
 
+        var headerbar = new Gtk.HeaderBar () {
+            title_widget = new Gtk.Label ("")
+        };
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_DEFAULT_DECORATION);
+
         child = window_handle;
         default_width = 350;
         icon_name = Application.get_default ().application_id;
-        titlebar = new Gtk.Grid () { visible = false };
+        titlebar = headerbar;
         title = _("Nimbus");
 
         get_location ();
