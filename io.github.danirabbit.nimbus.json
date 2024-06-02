@@ -1,7 +1,7 @@
 {
     "id": "io.github.danirabbit.nimbus",
     "runtime": "io.elementary.Platform",
-    "runtime-version": "7.2",
+    "runtime-version": "8",
     "sdk": "io.elementary.Sdk",
     "command": "io.github.danirabbit.nimbus",
     "finish-args": [

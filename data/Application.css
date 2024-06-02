@@ -27,6 +27,7 @@ window spinner {
 
 image.weather-icon {
     -gtk-icon-size: 5.333em; /* 48px */
+    -gtk-icon-palette: warning @BANANA_500;
 }
 
 image:not(.weather-icon) {
