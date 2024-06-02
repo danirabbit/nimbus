@@ -45,7 +45,9 @@
   <url type="donation">https://github.com/sponsors/danirabbit/</url>
   <url type="help">https://github.com/danirabbit/nimbus/discussions</url>
 
-  <developer_name>Danielle Foré</developer_name>
+  <developer id="io.github.danirabbit">
+    <name>Danielle Foré</name>
+  </developer>
   <update_contact>danielle@elementary.io</update_contact>
 
   <releases>
