@@ -1,5 +1,5 @@
 project('io.github.danirabbit.nimbus', 'vala', 'c',
-    version: '1.1.0'
+    version: '1.1.2'
 )
 
 add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
