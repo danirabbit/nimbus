@@ -30,20 +30,20 @@ image.weather-icon {
     -gtk-icon-palette: warning @BANANA_500;
 }
 
-image:not(.weather-icon) {
+image.conditions {
     min-height: 2em;
 }
 
-image:not(.weather-icon):dir(ltr) {
+image.conditions:dir(ltr) {
     margin-right: 1em;
 }
 
-image:not(.weather-icon):dir(rtl) {
+image.conditions:dir(rtl) {
     margin-left: 1em;
 }
 
 .weather {
-    padding: 2em;
+    padding: 2em 2em 1em;
     font-weight: 500;
 }
 
@@ -54,6 +54,14 @@ image:not(.weather-icon):dir(rtl) {
 .weather .title-1 {
     font-size: 3em;
     font-weight: 800;
+}
+
+hourly {
+    margin: 1em 1em 2em;
+}
+
+hourly label {
+    font-weight: bold;
 }
 
 .day {

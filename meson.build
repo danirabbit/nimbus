@@ -25,6 +25,7 @@ asresources = gnome.compile_resources(
 executable(
     meson.project_name(),
     'src/Application.vala',
+    'src/HourlyInfoChild.vala',
     'src/MainWindow.vala',
     config_file,
     asresources,
