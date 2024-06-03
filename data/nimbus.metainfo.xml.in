@@ -21,7 +21,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/danirabbit/nimbus/1.1.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/danirabbit/nimbus/1.1.2/data/screenshot.png</image>
     </screenshot>
   </screenshots>
 
@@ -51,7 +51,7 @@
   <update_contact>danielle@elementary.io</update_contact>
 
   <releases>
-    <release version="1.1.2" date="2023-10-22" urgency="medium">
+    <release version="1.1.2" date="2024-06-02" urgency="medium">
       <description>
         <p>More reliable and more accurate</p>
         <ul>
