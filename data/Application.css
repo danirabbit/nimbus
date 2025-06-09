@@ -19,32 +19,48 @@
 
 window {
     transition:
-        background 600ms ease-in-out,
-        color 600ms ease-in-out,
-        text-shadow 600ms ease-in-out,
-        -gtk-icon-shadow 600ms ease-in-out;
+        background 800ms cubic-bezier(0.16, 1, 0.3, 1),
+        color 800ms cubic-bezier(0.16, 1, 0.3, 1),
+        text-shadow 800ms cubic-bezier(0.16, 1, 0.3, 1),
+        -gtk-icon-shadow 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    background-size: cover;
+    background-position: center;
 }
 
 window spinner {
     margin: 2em;
+    opacity: 0.9;
 }
 
 headerbar {
     background: transparent;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 headerbar button {
     color: inherit;
     -gtk-icon-shadow: inherit;
+    transition: transform 200ms ease-out;
+}
+
+headerbar button:hover {
+    transform: scale(1.1);
 }
 
 image.weather-icon {
-    -gtk-icon-size: 5.333em; /* 48px */
+    -gtk-icon-size: 5.333em;
     -gtk-icon-palette: warning @BANANA_500;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 image.conditions {
     min-height: 2em;
+    transition: transform 300ms ease;
+}
+
+image.conditions:hover {
+    transform: scale(1.15);
 }
 
 image.conditions:dir(ltr) {
@@ -58,97 +74,130 @@ image.conditions:dir(rtl) {
 .weather {
     padding: 0 2em 2em;
     font-weight: 500;
+    text-align: center;
 }
 
 .weather .title-3 {
     font-size: 1.5em;
+    letter-spacing: 0.05em;
 }
 
 .weather .title-1 {
     font-size: 3em;
     font-weight: 800;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Weather Themes with Enhanced Visuals */
 .day {
     background-color: @BLUEBERRY_500;
     background-image:
-        linear-gradient(
-            to bottom,
-            alpha(white, 0),
-            alpha(white, 0.3)
-        );
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
     color: #fff;
     text-shadow:
-        0 2px 4px alpha(@BLUEBERRY_700, 0.5),
-        0 1px 0 alpha(@BLUEBERRY_700, 0.7);
+        0 2px 6px alpha(@BLUEBERRY_700, 0.6),
+        0 1px 0 alpha(@BLUEBERRY_700, 0.8);
     -gtk-icon-shadow:
-        0 2px 4px alpha(@BLUEBERRY_700, 0.5),
-        0 1px 0 alpha(@BLUEBERRY_700, 0.7);
+        0 3px 6px alpha(@BLUEBERRY_700, 0.6),
+        0 2px 0 alpha(@BLUEBERRY_700, 0.8);
 }
 
 .night {
-    background-color: #183048;
+    background-color: #0f1c2e;
     background-image:
-        linear-gradient(
-            to bottom,
-            alpha(white, 0),
-            alpha(white, 0.2)
-        );
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15)),
+        url("resource:///io/github/danirabbit/nimbus/stars.svg");
+    background-size: cover, cover, auto;
     color: #fff;
     text-shadow:
-        0 2px 4px alpha(black, 0.2),
-        0 1px 0 alpha(black, 0.4);
+        0 2px 8px alpha(black, 0.3),
+        0 1px 0 alpha(black, 0.5);
     -gtk-icon-shadow:
-        0 2px 4px alpha(black, 0.2),
-        0 1px 0 alpha(black, 0.4);
+        0 3px 8px alpha(black, 0.3),
+        0 2px 0 alpha(black, 0.5);
+    animation: stars-twinkle 8s infinite alternate;
 }
 
 .cloudy {
     background-color: @SILVER_700;
     background-image:
-        linear-gradient(
-            to bottom,
-            alpha(white, 0),
-            alpha(white, 0.3)
-        );
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 45%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)));
     color: #fff;
     text-shadow:
-        0 2px 4px alpha(@SILVER_900, 0.5),
-        0 1px 0 alpha(@SILVER_900, 0.7);
+        0 2px 8px alpha(@SILVER_900, 0.6),
+        0 1px 0 alpha(@SILVER_900, 0.8);
     -gtk-icon-shadow:
-        0 2px 4px alpha(@SILVER_900, 0.5),
-        0 1px 0 alpha(@SILVER_900, 0.7);
+        0 3px 8px alpha(@SILVER_900, 0.6),
+        0 2px 0 alpha(@SILVER_900, 0.8);
 }
 
 .showers {
-    background-color: #68758e;
+    background-color: #5a677f;
     background-image:
-        linear-gradient(
-            to bottom,
-            alpha(white, 0),
-            alpha(white, 0.2)
-        ),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)),
         url("resource:///io/github/danirabbit/nimbus/rain.svg");
-	background-repeat: no-repeat, repeat;
+    background-repeat: no-repeat, repeat;
     color: #fff;
     text-shadow:
-        0 2px 4px alpha(black, 0.2),
-        0 1px 0 alpha(black, 0.4);
+        0 2px 8px alpha(black, 0.3),
+        0 1px 0 alpha(black, 0.5);
     -gtk-icon-shadow:
-        0 2px 4px alpha(black, 0.2),
-        0 1px 0 alpha(black, 0.4);
-    animation: rain 3s linear infinite;
+        0 3px 8px alpha(black, 0.3),
+        0 2px 0 alpha(black, 0.5);
+    animation:
+        rain 2.5s linear infinite,
+        lightning 30s infinite;
 }
 
+/* Animations */
 @keyframes rain {
     0% {
-       background-position:
-           0 0,
-           0 0;
+        background-position:
+            0 0,
+            0 0;
     }
     100% {
-       background-position:
-           0 0,
-           400px 512px;
+        background-position:
+            0 0,
+            400px 512px;
+    }
+}
+
+@keyframes stars-twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes lightning {
+    0%, 85%, 100% {
+        opacity: 1;
+    }
+    87%, 88% {
+        opacity: 0.4;
+    }
+    89%, 90% {
+        opacity: 1.2;
+    }
+}
+
+/* Responsive elements */
+@media (max-width: 500px) {
+    .weather {
+        padding: 0 1em 1em;
+    }
+    
+    .weather .title-1 {
+        font-size: 2.5em;
+    }
+    
+    image.weather-icon {
+        -gtk-icon-size: 4em;
     }
 }
