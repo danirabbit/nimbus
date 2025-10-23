@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.danirabbit.nimbus package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.danirabbit.nimbus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-08 15:22-0700\n"
+"PO-Revision-Date: 2025-10-23 07:04+0200\n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: src/MainWindow.vala:41
+msgid "Wind"
+msgstr "Vind"
+
+#: src/MainWindow.vala:50
+msgid "Visibility"
+msgstr "Sikt"
+
+#: src/MainWindow.vala:59
+msgid "Pressure"
+msgstr "Lufttryck"
+
+#: src/MainWindow.vala:86
+msgid "Unable to Get Location"
+msgstr "Kunde inte hämta plats"
+
+#: src/MainWindow.vala:88
+msgid ""
+"Make sure location access is turned on in <a href='settings://privacy/"
+"location'>System Settings → Security &amp; Privacy</a>"
+msgstr ""
+"Kontrollera att platsåtkomst är aktiverad i <a href='settings://"
+"privacy/location'>Systeminställningar → Säkerhet och integritet</a>"
+
+#: src/MainWindow.vala:108
+msgid "Nimbus"
+msgstr "Nimbus"
+
+#: src/MainWindow.vala:136
+#, c-format
+msgid "%i°"
+msgstr "%i°"
